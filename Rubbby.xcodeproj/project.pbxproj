@@ -21,6 +21,7 @@
 		A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974823F50FDF008BBC33 /* NVActivityIndicatorView.framework */; };
 		A4F0975723F50FDF008BBC33 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974923F50FDF008BBC33 /* Moya.framework */; };
 		A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974A23F50FDF008BBC33 /* RxSwift.framework */; };
+		A4F0975E23F5367C008BBC33 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0975D23F5367C008BBC33 /* IQKeyboardManagerSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A4F0974823F50FDF008BBC33 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		A4F0974923F50FDF008BBC33 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		A4F0974A23F50FDF008BBC33 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		A4F0975D23F5367C008BBC33 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */,
 				A4F0975323F50FDF008BBC33 /* Result.framework in Frameworks */,
 				A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */,
+				A4F0975E23F5367C008BBC33 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				A4F0974B23F50FDF008BBC33 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +127,7 @@
 		A4F0974223F50FDF008BBC33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4F0975D23F5367C008BBC33 /* IQKeyboardManagerSwift.framework */,
 				A4F0974523F50FDF008BBC33 /* Alamofire.framework */,
 				A4F0974923F50FDF008BBC33 /* Moya.framework */,
 				A4F0974823F50FDF008BBC33 /* NVActivityIndicatorView.framework */,
@@ -250,6 +254,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (

@@ -9,3 +9,6 @@ github "Moya/Moya" "14.0.0-beta.6"
 # UI
 ## NVActivityIndicatorView(https://github.com/ninjaprox/NVActivityIndicatorView)
 github "ninjaprox/NVActivityIndicatorView"
+
+## IQKeyboardManager(https://github.com/hackiftekhar/IQKeyboardManager)
+github "hackiftekhar/IQKeyboardManager"
