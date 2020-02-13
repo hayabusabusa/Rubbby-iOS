@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71536D7F23F57C35004A330C /* HiraganaTranslationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D7E23F57C35004A330C /* HiraganaTranslationAPI.swift */; };
-		71536D8223F58191004A330C /* PostSentenceParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D8123F58191004A330C /* PostSentenceParams.swift */; };
 		71536D8C23F596C8004A330C /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D8B23F596C8004A330C /* Secrets.swift */; };
+		71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */; };
+		71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */; };
+		71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9423F5AA65004A330C /* PostSentenceRequest.swift */; };
 		A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0972023F50483008BBC33 /* AppDelegate.swift */; };
 		A4F0972523F50483008BBC33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0972423F50483008BBC33 /* ViewController.swift */; };
 		A4F0972823F50483008BBC33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F0972623F50483008BBC33 /* Main.storyboard */; };
@@ -42,9 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		71536D7E23F57C35004A330C /* HiraganaTranslationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationAPI.swift; sourceTree = "<group>"; };
-		71536D8123F58191004A330C /* PostSentenceParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSentenceParams.swift; sourceTree = "<group>"; };
 		71536D8B23F596C8004A330C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationAPITargetType.swift; sourceTree = "<group>"; };
+		71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationAPIService.swift; sourceTree = "<group>"; };
+		71536D9423F5AA65004A330C /* PostSentenceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSentenceRequest.swift; sourceTree = "<group>"; };
 		A4F0971D23F50483008BBC33 /* Rubbby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubbby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F0972023F50483008BBC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F0972423F50483008BBC33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,18 +102,19 @@
 		71536D7D23F57C0F004A330C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				71536D7E23F57C35004A330C /* HiraganaTranslationAPI.swift */,
-				71536D8023F58170004A330C /* Params */,
+				71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */,
+				71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */,
+				71536D9323F5AA3E004A330C /* Request */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		71536D8023F58170004A330C /* Params */ = {
+		71536D9323F5AA3E004A330C /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				71536D8123F58191004A330C /* PostSentenceParams.swift */,
+				71536D9423F5AA65004A330C /* PostSentenceRequest.swift */,
 			);
-			path = Params;
+			path = Request;
 			sourceTree = "<group>";
 		};
 		A4F0971423F50483008BBC33 = {
@@ -361,11 +364,12 @@
 			files = (
 				A4F0976423F53A05008BBC33 /* TranslationEntity.swift in Sources */,
 				A4F0976623F53B3B008BBC33 /* TranslationType.swift in Sources */,
+				71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */,
 				71536D8C23F596C8004A330C /* Secrets.swift in Sources */,
-				71536D8223F58191004A330C /* PostSentenceParams.swift in Sources */,
 				A4F0972523F50483008BBC33 /* ViewController.swift in Sources */,
+				71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */,
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
-				71536D7F23F57C35004A330C /* HiraganaTranslationAPI.swift in Sources */,
+				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
