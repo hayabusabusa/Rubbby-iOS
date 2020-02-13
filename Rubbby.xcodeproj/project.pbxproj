@@ -16,7 +16,6 @@
 		A4F0974D23F50FDF008BBC33 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974423F50FDF008BBC33 /* RxMoya.framework */; };
 		A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974523F50FDF008BBC33 /* Alamofire.framework */; };
 		A4F0975123F50FDF008BBC33 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974623F50FDF008BBC33 /* RxCocoa.framework */; };
-		A4F0975323F50FDF008BBC33 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974723F50FDF008BBC33 /* Result.framework */; };
 		A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974823F50FDF008BBC33 /* NVActivityIndicatorView.framework */; };
 		A4F0975723F50FDF008BBC33 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974923F50FDF008BBC33 /* Moya.framework */; };
 		A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974A23F50FDF008BBC33 /* RxSwift.framework */; };
@@ -76,7 +75,6 @@
 				A4F0974D23F50FDF008BBC33 /* RxMoya.framework in Frameworks */,
 				A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */,
 				A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */,
-				A4F0975323F50FDF008BBC33 /* Result.framework in Frameworks */,
 				A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */,
 				A4F0975E23F5367C008BBC33 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				A4F0974B23F50FDF008BBC33 /* RxRelay.framework in Frameworks */,
@@ -314,7 +312,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
