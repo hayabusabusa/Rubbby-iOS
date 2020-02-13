@@ -44,14 +44,15 @@ extension HiraganaTranslationAPI: TargetType {
     }
     
     var parameters: [String: Any] {
+        var parameters: [String: Any] = ["app_id": appID]
+        
         switch self {
         case .postSentence(let params):
-            let parameters = [
-                "sentence": params.sentence,
-                "output_type": params.outputType.rawValue
-            ] as [String: Any]
-            return parameters
+            parameters["sentence"] = params.sentence
+            parameters["output_type"] = params.outputType.rawValue
         }
+        
+        return parameters
     }
     
     var parameterEncoding: Moya.URLEncoding {
