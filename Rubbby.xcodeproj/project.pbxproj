@@ -26,6 +26,7 @@
 		A4F0976623F53B3B008BBC33 /* TranslationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0976523F53B3B008BBC33 /* TranslationType.swift */; };
 		A4F0976F23F54055008BBC33 /* hiragana_type_response.json in Resources */ = {isa = PBXBuildFile; fileRef = A4F0976E23F54055008BBC33 /* hiragana_type_response.json */; };
 		A4F0977123F540C2008BBC33 /* katakana_type_response.json in Resources */ = {isa = PBXBuildFile; fileRef = A4F0977023F540C2008BBC33 /* katakana_type_response.json */; };
+		A4F0977423F5415D008BBC33 /* XCTestCase+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0977323F5415D008BBC33 /* XCTestCase+Extenstion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		A4F0976523F53B3B008BBC33 /* TranslationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationType.swift; sourceTree = "<group>"; };
 		A4F0976E23F54055008BBC33 /* hiragana_type_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hiragana_type_response.json; sourceTree = "<group>"; };
 		A4F0977023F540C2008BBC33 /* katakana_type_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = katakana_type_response.json; sourceTree = "<group>"; };
+		A4F0977323F5415D008BBC33 /* XCTestCase+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extenstion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F0973723F50488008BBC33 /* RubbbyTests.swift */,
+				A4F0977223F540EE008BBC33 /* Util */,
 				A4F0976D23F53FDA008BBC33 /* Resource */,
 				A4F0973923F50488008BBC33 /* Info.plist */,
 			);
@@ -174,6 +177,14 @@
 				A4F0977023F540C2008BBC33 /* katakana_type_response.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A4F0977223F540EE008BBC33 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A4F0977323F5415D008BBC33 /* XCTestCase+Extenstion.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4F0973823F50488008BBC33 /* RubbbyTests.swift in Sources */,
+				A4F0977423F5415D008BBC33 /* XCTestCase+Extenstion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
