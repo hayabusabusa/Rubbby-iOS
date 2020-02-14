@@ -12,6 +12,9 @@ final class PrototypeViewController: UIViewController {
     
     // MARK: IBOutlet
     
+    @IBOutlet private weak var resultLabel: UILabel!
+    @IBOutlet private weak var inputTextField: UITextField!
+    
     // MARK: Properties
     
     // MARK: Lifecycle
