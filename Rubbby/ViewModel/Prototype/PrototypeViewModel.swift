@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-
+import RxCocoa
 
 final class PrototypeViewModel {
     
@@ -26,16 +26,18 @@ extension PrototypeViewModel {
     // MARK: I/O
     
     struct Input {
-        
+        let editInputTextField: Driver<String>
     }
     
     struct Output {
-        
+        let translationDriver: Driver<String>
     }
     
     // MARK: Transform I/O
     
     func transform(input: PrototypeViewModel.Input) -> PrototypeViewModel.Output {
-        return Output()
+        let translationRelay: BehaviorRelay<String> = .init(value: "結果が表示されます")
+        
+        return Output(translationDriver: translationRelay.asDriver())
     }
 }
