@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,10 @@
 		A4F9D00B23F63B5B001D37E4 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00A23F63B5B001D37E4 /* Translation.swift */; };
 		A4F9D00D23F63B93001D37E4 /* TranslationEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00C23F63B93001D37E4 /* TranslationEntityTranslator.swift */; };
 		A4F9D01023F63C25001D37E4 /* TranslationEntityTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00F23F63C25001D37E4 /* TranslationEntityTranslatorTests.swift */; };
+		A4F9D01923F642FC001D37E4 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F9D01723F642FC001D37E4 /* RxTest.framework */; platformFilter = ios; };
+		A4F9D01A23F642FC001D37E4 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F9D01823F642FC001D37E4 /* RxBlocking.framework */; platformFilter = ios; };
+		A4F9D01B23F64316001D37E4 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01823F642FC001D37E4 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A4F9D01C23F64316001D37E4 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01723F642FC001D37E4 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,20 @@
 			remoteInfo = Rubbby;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A4F9D01623F642A4001D37E4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A4F9D01B23F64316001D37E4 /* RxBlocking.framework in CopyFiles */,
+				A4F9D01C23F64316001D37E4 /* RxTest.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		71536D8B23F596C8004A330C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -81,6 +99,8 @@
 		A4F9D00A23F63B5B001D37E4 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		A4F9D00C23F63B93001D37E4 /* TranslationEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEntityTranslator.swift; sourceTree = "<group>"; };
 		A4F9D00F23F63C25001D37E4 /* TranslationEntityTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEntityTranslatorTests.swift; sourceTree = "<group>"; };
+		A4F9D01723F642FC001D37E4 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		A4F9D01823F642FC001D37E4 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4F9D01923F642FC001D37E4 /* RxTest.framework in Frameworks */,
+				A4F9D01A23F642FC001D37E4 /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +197,8 @@
 		A4F0974223F50FDF008BBC33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4F9D01823F642FC001D37E4 /* RxBlocking.framework */,
+				A4F9D01723F642FC001D37E4 /* RxTest.framework */,
 				A4F0975D23F5367C008BBC33 /* IQKeyboardManagerSwift.framework */,
 				A4F0974523F50FDF008BBC33 /* Alamofire.framework */,
 				A4F0974923F50FDF008BBC33 /* Moya.framework */,
@@ -296,6 +320,7 @@
 				A4F0972F23F50488008BBC33 /* Sources */,
 				A4F0973023F50488008BBC33 /* Frameworks */,
 				A4F0973123F50488008BBC33 /* Resources */,
+				A4F9D01623F642A4001D37E4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -620,6 +645,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RubbbyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -641,6 +670,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RubbbyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
