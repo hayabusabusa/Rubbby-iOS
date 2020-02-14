@@ -39,6 +39,7 @@
 		A4F9D01A23F642FC001D37E4 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F9D01823F642FC001D37E4 /* RxBlocking.framework */; platformFilter = ios; };
 		A4F9D01B23F64316001D37E4 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01823F642FC001D37E4 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4F9D01C23F64316001D37E4 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01723F642FC001D37E4 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A4F9D01F23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		A4F9D00F23F63C25001D37E4 /* TranslationEntityTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEntityTranslatorTests.swift; sourceTree = "<group>"; };
 		A4F9D01723F642FC001D37E4 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		A4F9D01823F642FC001D37E4 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHiraganaTranslationAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F9D00E23F63C03001D37E4 /* Translator */,
+				A4F9D01D23F64389001D37E4 /* Network */,
 				A4F0977623F542DA008BBC33 /* Entity */,
 			);
 			path = Model;
@@ -290,6 +293,14 @@
 				A4F9D00F23F63C25001D37E4 /* TranslationEntityTranslatorTests.swift */,
 			);
 			path = Translator;
+			sourceTree = "<group>";
+		};
+		A4F9D01D23F64389001D37E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +459,7 @@
 				A4F0977A23F54312008BBC33 /* TranslationEntityTests.swift in Sources */,
 				A4F9D01023F63C25001D37E4 /* TranslationEntityTranslatorTests.swift in Sources */,
 				A4F0977423F5415D008BBC33 /* XCTestCase+Extenstion.swift in Sources */,
+				A4F9D01F23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
