@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gvB-un-NDY">
-                                <rect key="frame" x="40" y="381.5" width="334" height="53"/>
+                                <rect key="frame" x="40" y="379.5" width="334" height="57"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="結果が表示されます" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl5-Nc-y9h">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
@@ -26,10 +26,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="onL-Xg-jal">
-                                        <rect key="frame" x="0.0" y="25" width="334" height="28"/>
+                                        <rect key="frame" x="0.0" y="25" width="334" height="32"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="漢字の文" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZ4-os-yP8">
-                                                <rect key="frame" x="0.0" y="0.0" width="262" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="262" height="32"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="28"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
@@ -39,7 +39,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNv-07-f4S">
-                                                <rect key="frame" x="286" y="0.0" width="48" height="28"/>
+                                                <rect key="frame" x="286" y="0.0" width="48" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="hZZ-rd-nS3"/>
                                                 </constraints>
@@ -47,6 +47,9 @@
                                                 <state key="normal" title="翻訳"/>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="XOS-rO-yW4"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>

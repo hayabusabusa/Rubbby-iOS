@@ -46,16 +46,17 @@ extension PrototypeViewModel {
         let inputTextFieldRelay: BehaviorRelay<String?> = .init(value: "")
         let translationRelay: BehaviorRelay<String> = .init(value: "結果が表示されます")
         
-        let postSentenceSignal = model.postSentence(appId: appID, sentence: inputTextFieldRelay.value ?? "", outputType: .hiragana)
-            .asSignal { error -> SharedSequence<SignalSharingStrategy, Translation> in
-                print(error)
-                return .empty()
-            }
-        
         input.tapTranslateButtonSignal
-            .flatMap { postSentenceSignal }
-            .map { $0.converted }
-            .emit(to: translationRelay)
+            .emit(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.model.postSentence(appId: appID, sentence: inputTextFieldRelay.value!, outputType: .hiragana)
+                    .subscribe(onSuccess: { result in
+                        translationRelay.accept(result.converted)
+                    }, onError: { error in
+                        print(error)
+                    })
+                    .disposed(by: self.disposeBag)
+            })
             .disposed(by: disposeBag)
         
         return Output(inputTextFieldRelay: inputTextFieldRelay,
