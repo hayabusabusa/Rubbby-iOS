@@ -16,6 +16,7 @@ final class PrototypeViewController: UIViewController {
     
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var inputTextField: UITextField!
+    @IBOutlet private weak var translateButton: UIButton!
     
     // MARK: Properties
     
@@ -38,9 +39,12 @@ extension PrototypeViewController {
         let viewModel = PrototypeViewModel()
         self.viewModel = viewModel
         
-        let input = PrototypeViewModel.Input(editInputTextField: inputTextField.rx.text.orEmpty.asDriver())
+        let input = PrototypeViewModel.Input(tapTranslateButtonSignal: translateButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
+        inputTextField.rx.text
+            .bind(to: output.inputTextFieldRelay)
+            .disposed(by: disposeBag)
         output.translationDriver
             .drive(resultLabel.rx.text)
             .disposed(by: disposeBag)
