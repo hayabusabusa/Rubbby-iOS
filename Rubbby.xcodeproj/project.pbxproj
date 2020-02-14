@@ -30,6 +30,7 @@
 		A4F0977123F540C2008BBC33 /* katakana_type_response.json in Resources */ = {isa = PBXBuildFile; fileRef = A4F0977023F540C2008BBC33 /* katakana_type_response.json */; };
 		A4F0977423F5415D008BBC33 /* XCTestCase+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0977323F5415D008BBC33 /* XCTestCase+Extenstion.swift */; };
 		A4F0977A23F54312008BBC33 /* TranslationEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0977923F54312008BBC33 /* TranslationEntityTests.swift */; };
+		A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		A4F0977023F540C2008BBC33 /* katakana_type_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = katakana_type_response.json; sourceTree = "<group>"; };
 		A4F0977323F5415D008BBC33 /* XCTestCase+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extenstion.swift"; sourceTree = "<group>"; };
 		A4F0977923F54312008BBC33 /* TranslationEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEntityTests.swift; sourceTree = "<group>"; };
+		A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		A4F0976123F53740008BBC33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A4F9D00323F6375E001D37E4 /* Repository */,
 				71536D7D23F57C0F004A330C /* Network */,
 				A4F0976223F538E3008BBC33 /* Entity */,
 			);
@@ -227,6 +230,14 @@
 				A4F0977923F54312008BBC33 /* TranslationEntityTests.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		A4F9D00323F6375E001D37E4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +381,7 @@
 				71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */,
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
+				A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
