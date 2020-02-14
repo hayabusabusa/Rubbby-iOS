@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,16 @@
 		A4F0977123F540C2008BBC33 /* katakana_type_response.json in Resources */ = {isa = PBXBuildFile; fileRef = A4F0977023F540C2008BBC33 /* katakana_type_response.json */; };
 		A4F0977423F5415D008BBC33 /* XCTestCase+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0977323F5415D008BBC33 /* XCTestCase+Extenstion.swift */; };
 		A4F0977A23F54312008BBC33 /* TranslationEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0977923F54312008BBC33 /* TranslationEntityTests.swift */; };
+		A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */; };
+		A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00823F63B22001D37E4 /* Translator.swift */; };
+		A4F9D00B23F63B5B001D37E4 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00A23F63B5B001D37E4 /* Translation.swift */; };
+		A4F9D00D23F63B93001D37E4 /* TranslationEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00C23F63B93001D37E4 /* TranslationEntityTranslator.swift */; };
+		A4F9D01023F63C25001D37E4 /* TranslationEntityTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00F23F63C25001D37E4 /* TranslationEntityTranslatorTests.swift */; };
+		A4F9D01923F642FC001D37E4 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F9D01723F642FC001D37E4 /* RxTest.framework */; platformFilter = ios; };
+		A4F9D01A23F642FC001D37E4 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F9D01823F642FC001D37E4 /* RxBlocking.framework */; platformFilter = ios; };
+		A4F9D01B23F64316001D37E4 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01823F642FC001D37E4 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A4F9D01C23F64316001D37E4 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01723F642FC001D37E4 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A4F9D01F23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +51,20 @@
 			remoteInfo = Rubbby;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A4F9D01623F642A4001D37E4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A4F9D01B23F64316001D37E4 /* RxBlocking.framework in CopyFiles */,
+				A4F9D01C23F64316001D37E4 /* RxTest.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		71536D8B23F596C8004A330C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -71,6 +95,14 @@
 		A4F0977023F540C2008BBC33 /* katakana_type_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = katakana_type_response.json; sourceTree = "<group>"; };
 		A4F0977323F5415D008BBC33 /* XCTestCase+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extenstion.swift"; sourceTree = "<group>"; };
 		A4F0977923F54312008BBC33 /* TranslationEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEntityTests.swift; sourceTree = "<group>"; };
+		A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationRepository.swift; sourceTree = "<group>"; };
+		A4F9D00823F63B22001D37E4 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		A4F9D00A23F63B5B001D37E4 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		A4F9D00C23F63B93001D37E4 /* TranslationEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEntityTranslator.swift; sourceTree = "<group>"; };
+		A4F9D00F23F63C25001D37E4 /* TranslationEntityTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEntityTranslatorTests.swift; sourceTree = "<group>"; };
+		A4F9D01723F642FC001D37E4 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		A4F9D01823F642FC001D37E4 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHiraganaTranslationAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4F9D01923F642FC001D37E4 /* RxTest.framework in Frameworks */,
+				A4F9D01A23F642FC001D37E4 /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +199,8 @@
 		A4F0974223F50FDF008BBC33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4F9D01823F642FC001D37E4 /* RxBlocking.framework */,
+				A4F9D01723F642FC001D37E4 /* RxTest.framework */,
 				A4F0975D23F5367C008BBC33 /* IQKeyboardManagerSwift.framework */,
 				A4F0974523F50FDF008BBC33 /* Alamofire.framework */,
 				A4F0974923F50FDF008BBC33 /* Moya.framework */,
@@ -181,6 +217,8 @@
 		A4F0976123F53740008BBC33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A4F9D00723F63B14001D37E4 /* Translator */,
+				A4F9D00323F6375E001D37E4 /* Repository */,
 				71536D7D23F57C0F004A330C /* Network */,
 				A4F0976223F538E3008BBC33 /* Entity */,
 			);
@@ -192,6 +230,7 @@
 			children = (
 				A4F0976323F53A05008BBC33 /* TranslationEntity.swift */,
 				A4F0976523F53B3B008BBC33 /* TranslationType.swift */,
+				A4F9D00A23F63B5B001D37E4 /* Translation.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -216,6 +255,8 @@
 		A4F0977523F542D1008BBC33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A4F9D00E23F63C03001D37E4 /* Translator */,
+				A4F9D01D23F64389001D37E4 /* Network */,
 				A4F0977623F542DA008BBC33 /* Entity */,
 			);
 			path = Model;
@@ -227,6 +268,39 @@
 				A4F0977923F54312008BBC33 /* TranslationEntityTests.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		A4F9D00323F6375E001D37E4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A4F9D00723F63B14001D37E4 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9D00823F63B22001D37E4 /* Translator.swift */,
+				A4F9D00C23F63B93001D37E4 /* TranslationEntityTranslator.swift */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		A4F9D00E23F63C03001D37E4 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9D00F23F63C25001D37E4 /* TranslationEntityTranslatorTests.swift */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		A4F9D01D23F64389001D37E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +331,7 @@
 				A4F0972F23F50488008BBC33 /* Sources */,
 				A4F0973023F50488008BBC33 /* Frameworks */,
 				A4F0973123F50488008BBC33 /* Resources */,
+				A4F9D01623F642A4001D37E4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -365,11 +440,15 @@
 				A4F0976423F53A05008BBC33 /* TranslationEntity.swift in Sources */,
 				A4F0976623F53B3B008BBC33 /* TranslationType.swift in Sources */,
 				71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */,
+				A4F9D00B23F63B5B001D37E4 /* Translation.swift in Sources */,
 				71536D8C23F596C8004A330C /* Secrets.swift in Sources */,
 				A4F0972523F50483008BBC33 /* ViewController.swift in Sources */,
+				A4F9D00D23F63B93001D37E4 /* TranslationEntityTranslator.swift in Sources */,
 				71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */,
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
+				A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */,
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
+				A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4F0977A23F54312008BBC33 /* TranslationEntityTests.swift in Sources */,
+				A4F9D01023F63C25001D37E4 /* TranslationEntityTranslatorTests.swift in Sources */,
 				A4F0977423F5415D008BBC33 /* XCTestCase+Extenstion.swift in Sources */,
+				A4F9D01F23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +657,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RubbbyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -597,6 +682,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RubbbyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
