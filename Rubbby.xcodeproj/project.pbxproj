@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71536D8C23F596C8004A330C /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D8B23F596C8004A330C /* Secrets.swift */; };
+		71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */; };
+		71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */; };
+		71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9423F5AA65004A330C /* PostSentenceRequest.swift */; };
 		A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0972023F50483008BBC33 /* AppDelegate.swift */; };
 		A4F0972523F50483008BBC33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0972423F50483008BBC33 /* ViewController.swift */; };
 		A4F0972823F50483008BBC33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F0972623F50483008BBC33 /* Main.storyboard */; };
@@ -16,7 +20,6 @@
 		A4F0974D23F50FDF008BBC33 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974423F50FDF008BBC33 /* RxMoya.framework */; };
 		A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974523F50FDF008BBC33 /* Alamofire.framework */; };
 		A4F0975123F50FDF008BBC33 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974623F50FDF008BBC33 /* RxCocoa.framework */; };
-		A4F0975323F50FDF008BBC33 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974723F50FDF008BBC33 /* Result.framework */; };
 		A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974823F50FDF008BBC33 /* NVActivityIndicatorView.framework */; };
 		A4F0975723F50FDF008BBC33 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974923F50FDF008BBC33 /* Moya.framework */; };
 		A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F0974A23F50FDF008BBC33 /* RxSwift.framework */; };
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71536D8B23F596C8004A330C /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationAPITargetType.swift; sourceTree = "<group>"; };
+		71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationAPIService.swift; sourceTree = "<group>"; };
+		71536D9423F5AA65004A330C /* PostSentenceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSentenceRequest.swift; sourceTree = "<group>"; };
 		A4F0971D23F50483008BBC33 /* Rubbby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubbby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F0972023F50483008BBC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F0972423F50483008BBC33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +83,6 @@
 				A4F0974D23F50FDF008BBC33 /* RxMoya.framework in Frameworks */,
 				A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */,
 				A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */,
-				A4F0975323F50FDF008BBC33 /* Result.framework in Frameworks */,
 				A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */,
 				A4F0975E23F5367C008BBC33 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				A4F0974B23F50FDF008BBC33 /* RxRelay.framework in Frameworks */,
@@ -93,6 +99,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71536D7D23F57C0F004A330C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */,
+				71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */,
+				71536D9323F5AA3E004A330C /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		71536D9323F5AA3E004A330C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				71536D9423F5AA65004A330C /* PostSentenceRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		A4F0971423F50483008BBC33 = {
 			isa = PBXGroup;
 			children = (
@@ -115,13 +139,14 @@
 		A4F0971F23F50483008BBC33 /* Rubbby */ = {
 			isa = PBXGroup;
 			children = (
-				A4F0976123F53740008BBC33 /* Domain */,
 				A4F0972023F50483008BBC33 /* AppDelegate.swift */,
+				A4F0976123F53740008BBC33 /* Model */,
 				A4F0972423F50483008BBC33 /* ViewController.swift */,
 				A4F0972623F50483008BBC33 /* Main.storyboard */,
 				A4F0972923F50487008BBC33 /* Assets.xcassets */,
 				A4F0972B23F50487008BBC33 /* LaunchScreen.storyboard */,
 				A4F0972E23F50487008BBC33 /* Info.plist */,
+				71536D8B23F596C8004A330C /* Secrets.swift */,
 			);
 			path = Rubbby;
 			sourceTree = "<group>";
@@ -129,7 +154,7 @@
 		A4F0973623F50488008BBC33 /* RubbbyTests */ = {
 			isa = PBXGroup;
 			children = (
-				A4F0977523F542D1008BBC33 /* Domain */,
+				A4F0977523F542D1008BBC33 /* Model */,
 				A4F0977223F540EE008BBC33 /* Util */,
 				A4F0976D23F53FDA008BBC33 /* Resource */,
 				A4F0973923F50488008BBC33 /* Info.plist */,
@@ -153,12 +178,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A4F0976123F53740008BBC33 /* Domain */ = {
+		A4F0976123F53740008BBC33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				71536D7D23F57C0F004A330C /* Network */,
 				A4F0976223F538E3008BBC33 /* Entity */,
 			);
-			path = Domain;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A4F0976223F538E3008BBC33 /* Entity */ = {
@@ -187,12 +213,12 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		A4F0977523F542D1008BBC33 /* Domain */ = {
+		A4F0977523F542D1008BBC33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A4F0977623F542DA008BBC33 /* Entity */,
 			);
-			path = Domain;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A4F0977623F542DA008BBC33 /* Entity */ = {
@@ -314,7 +340,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
@@ -339,8 +364,12 @@
 			files = (
 				A4F0976423F53A05008BBC33 /* TranslationEntity.swift in Sources */,
 				A4F0976623F53B3B008BBC33 /* TranslationType.swift in Sources */,
+				71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */,
+				71536D8C23F596C8004A330C /* Secrets.swift in Sources */,
 				A4F0972523F50483008BBC33 /* ViewController.swift in Sources */,
+				71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */,
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
+				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
