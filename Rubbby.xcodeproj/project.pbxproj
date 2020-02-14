@@ -139,8 +139,8 @@
 		A4F0971F23F50483008BBC33 /* Rubbby */ = {
 			isa = PBXGroup;
 			children = (
-				A4F0976123F53740008BBC33 /* Domain */,
 				A4F0972023F50483008BBC33 /* AppDelegate.swift */,
+				A4F0976123F53740008BBC33 /* Model */,
 				A4F0972423F50483008BBC33 /* ViewController.swift */,
 				A4F0972623F50483008BBC33 /* Main.storyboard */,
 				A4F0972923F50487008BBC33 /* Assets.xcassets */,
@@ -154,7 +154,7 @@
 		A4F0973623F50488008BBC33 /* RubbbyTests */ = {
 			isa = PBXGroup;
 			children = (
-				A4F0977523F542D1008BBC33 /* Domain */,
+				A4F0977523F542D1008BBC33 /* Model */,
 				A4F0977223F540EE008BBC33 /* Util */,
 				A4F0976D23F53FDA008BBC33 /* Resource */,
 				A4F0973923F50488008BBC33 /* Info.plist */,
@@ -178,13 +178,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A4F0976123F53740008BBC33 /* Domain */ = {
+		A4F0976123F53740008BBC33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				71536D7D23F57C0F004A330C /* Network */,
 				A4F0976223F538E3008BBC33 /* Entity */,
 			);
-			path = Domain;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A4F0976223F538E3008BBC33 /* Entity */ = {
@@ -213,12 +213,12 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		A4F0977523F542D1008BBC33 /* Domain */ = {
+		A4F0977523F542D1008BBC33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A4F0977623F542DA008BBC33 /* Entity */,
 			);
-			path = Domain;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A4F0977623F542DA008BBC33 /* Entity */ = {
