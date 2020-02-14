@@ -41,6 +41,7 @@
 		A4F9D02823F65232001D37E4 /* PrototypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D02723F65232001D37E4 /* PrototypeViewController.swift */; };
 		A4F9D02A23F65255001D37E4 /* PrototypeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F9D02923F65255001D37E4 /* PrototypeViewController.storyboard */; };
 		A4F9D02E23F6548F001D37E4 /* PrototypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D02D23F6548F001D37E4 /* PrototypeViewModel.swift */; };
+		A4F9D03223F656FF001D37E4 /* PrototypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D03123F656FF001D37E4 /* PrototypeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		A4F9D02723F65232001D37E4 /* PrototypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewController.swift; sourceTree = "<group>"; };
 		A4F9D02923F65255001D37E4 /* PrototypeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrototypeViewController.storyboard; sourceTree = "<group>"; };
 		A4F9D02D23F6548F001D37E4 /* PrototypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewModel.swift; sourceTree = "<group>"; };
+		A4F9D03123F656FF001D37E4 /* PrototypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				A4F9D00323F6375E001D37E4 /* Repository */,
 				71536D7D23F57C0F004A330C /* Network */,
 				A4F0976223F538E3008BBC33 /* Entity */,
+				A4F9D03123F656FF001D37E4 /* PrototypeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				71536D8C23F596C8004A330C /* Secrets.swift in Sources */,
 				A4F9D00D23F63B93001D37E4 /* TranslationEntityTranslator.swift in Sources */,
 				71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */,
+				A4F9D03223F656FF001D37E4 /* PrototypeModel.swift in Sources */,
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
 				A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */,
 				A4F9D02823F65232001D37E4 /* PrototypeViewController.swift in Sources */,
