@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class InputSentenceViewController: DisposableViewController {
 
@@ -21,6 +22,8 @@ final class InputSentenceViewController: DisposableViewController {
 
     // MARK: Properties
 
+    private var viewModel: InputSentenceViewModel!
+
     // MARK: Lifecycle
 
     static func instantiate() -> InputSentenceViewController {
@@ -31,6 +34,7 @@ final class InputSentenceViewController: DisposableViewController {
         super.viewDidLoad()
         setupNavigation()
         setupSegmentedControl()
+        bindViewModel()
     }
 }
 
@@ -46,5 +50,15 @@ extension InputSentenceViewController {
         typeSegmentedControl.selectedSegmentTintColor = .primary
         typeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.primary], for: .normal)
         typeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+    }
+}
+
+// MARK: - ViewModel
+
+extension InputSentenceViewController {
+
+    private func bindViewModel() {
+        let viewModel = InputSentenceViewModel()
+        self.viewModel = viewModel
     }
 }
