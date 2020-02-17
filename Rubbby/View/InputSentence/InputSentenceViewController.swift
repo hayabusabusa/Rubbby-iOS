@@ -9,13 +9,13 @@
 import UIKit
 
 final class InputSentenceViewController: DisposableViewController {
-    
+
     // MARK: IBOutlet
-    
+
     // MARK: Properties
-    
+
     // MARK: Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
