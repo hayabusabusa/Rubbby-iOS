@@ -36,7 +36,7 @@ extension HiraganaTranslationAPIService {
             return Data()
         }
 
-        var parameters: [String : Any] {
+        var parameters: [String: Any] {
             return [
                 "app_id": appId,
                 "sentence": sentence,

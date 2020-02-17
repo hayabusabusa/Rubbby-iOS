@@ -21,7 +21,7 @@ extension HiraganaTranslationAPITargetType {
         return URL(string: "https://labs.goo.ne.jp/api")!
     }
 
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
 }
