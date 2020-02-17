@@ -28,5 +28,15 @@ final class InputSentenceViewController: DisposableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
+    }
+}
+
+// MARK: - Setup
+
+extension InputSentenceViewController {
+
+    private func setupNavigation() {
+        navigationItem.title = "変換する"
     }
 }
