@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // NOTE: Enable IQKeyboardManager
         IQKeyboardManager.shared.enable = true
-        
+
         // NOTE: Setup RootViewController
         setupRootViewController()
         return true

@@ -34,6 +34,7 @@
 		A4F21F3E23FA7D790032A2D0 /* InputSentenceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F21F3D23FA7D790032A2D0 /* InputSentenceViewController.storyboard */; };
 		A4F21F4023FA7DE90032A2D0 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F21F3F23FA7DE90032A2D0 /* Storyboard.swift */; };
 		A4F21F4223FA7F7B0032A2D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F21F4123FA7F7B0032A2D0 /* NavigationController.swift */; };
+		A4F21F4623FA88810032A2D0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F21F4523FA88810032A2D0 /* UIColor+Extension.swift */; };
 		A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */; };
 		A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00823F63B22001D37E4 /* Translator.swift */; };
 		A4F9D00B23F63B5B001D37E4 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00A23F63B5B001D37E4 /* Translation.swift */; };
@@ -107,6 +108,7 @@
 		A4F21F3D23FA7D790032A2D0 /* InputSentenceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputSentenceViewController.storyboard; sourceTree = "<group>"; };
 		A4F21F3F23FA7DE90032A2D0 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		A4F21F4123FA7F7B0032A2D0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		A4F21F4523FA88810032A2D0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationRepository.swift; sourceTree = "<group>"; };
 		A4F9D00823F63B22001D37E4 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		A4F9D00A23F63B5B001D37E4 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				A4F0976123F53740008BBC33 /* Model */,
 				A4F9D02523F65205001D37E4 /* View */,
 				A4F9D02B23F65465001D37E4 /* ViewModel */,
+				A4F21F4323FA88640032A2D0 /* Util */,
 				A4F0972923F50487008BBC33 /* Assets.xcassets */,
 				A4F0972B23F50487008BBC33 /* LaunchScreen.storyboard */,
 				A4F0972E23F50487008BBC33 /* Info.plist */,
@@ -320,6 +323,22 @@
 				A4F21F3B23FA7D300032A2D0 /* DisposableViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A4F21F4323FA88640032A2D0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A4F21F4423FA886F0032A2D0 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A4F21F4423FA886F0032A2D0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A4F21F4523FA88810032A2D0 /* UIColor+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		A4F9D00323F6375E001D37E4 /* Repository */ = {
@@ -564,6 +583,7 @@
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
 				A4F21F4023FA7DE90032A2D0 /* Storyboard.swift in Sources */,
 				A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */,
+				A4F21F4623FA88810032A2D0 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

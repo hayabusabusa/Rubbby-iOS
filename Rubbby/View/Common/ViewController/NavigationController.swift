@@ -32,9 +32,9 @@ extension NavigationController {
     private func setupAppearance() {
         view.backgroundColor = .white
         navigationBar.isTranslucent = false
-        navigationBar.tintColor = .blue
+        navigationBar.tintColor = .primary
         navigationBar.barTintColor = .white
-        //navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primary]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primary]
     }
 }
 
