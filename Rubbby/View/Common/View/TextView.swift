@@ -17,6 +17,7 @@ class TextView: UITextView {
     @IBInspectable var borderWidth: CGFloat = 0.0
     @IBInspectable var borderColor: UIColor = .clear
     @IBInspectable var placeholder: String = ""
+    @IBInspectable var placeholderColor: UIColor = UIColor.lightGray.withAlphaComponent(0.25)
 
     // MARK: Properties
 
