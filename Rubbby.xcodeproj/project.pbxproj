@@ -11,6 +11,7 @@
 		71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */; };
 		71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */; };
 		71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9423F5AA65004A330C /* PostSentenceRequest.swift */; };
+		71536D9723FAC279004A330C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9623FAC279004A330C /* Button.swift */; };
 		A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0972023F50483008BBC33 /* AppDelegate.swift */; };
 		A4F0972A23F50487008BBC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4F0972923F50487008BBC33 /* Assets.xcassets */; };
 		A4F0972D23F50487008BBC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F0972B23F50487008BBC33 /* LaunchScreen.storyboard */; };
@@ -80,6 +81,7 @@
 		71536D8F23F5A823004A330C /* HiraganaTranslationAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationAPITargetType.swift; sourceTree = "<group>"; };
 		71536D9123F5A940004A330C /* HiraganaTranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationAPIService.swift; sourceTree = "<group>"; };
 		71536D9423F5AA65004A330C /* PostSentenceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSentenceRequest.swift; sourceTree = "<group>"; };
+		71536D9623FAC279004A330C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		A4F0971D23F50483008BBC33 /* Rubbby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubbby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F0972023F50483008BBC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F0972923F50487008BBC33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F21F3423FA7B130032A2D0 /* ContainerView.swift */,
+				71536D9623FAC279004A330C /* Button.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				A4F21F3C23FA7D300032A2D0 /* DisposableViewController.swift in Sources */,
 				71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */,
 				A4F9D00B23F63B5B001D37E4 /* Translation.swift in Sources */,
+				71536D9723FAC279004A330C /* Button.swift in Sources */,
 				A4F21F3523FA7B130032A2D0 /* ContainerView.swift in Sources */,
 				71536D8C23F596C8004A330C /* Secrets.swift in Sources */,
 				A4F9D00D23F63B93001D37E4 /* TranslationEntityTranslator.swift in Sources */,

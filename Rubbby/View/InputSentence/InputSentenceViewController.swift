@@ -15,6 +15,8 @@ final class InputSentenceViewController: DisposableViewController {
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var inputTextView: UITextView!
     @IBOutlet private weak var translateButton: UIButton!
+    @IBOutlet private weak var usageButton: UIButton!
+    @IBOutlet private weak var usageTextView: UITextView!
 
     // MARK: Properties
 
