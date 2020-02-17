@@ -11,7 +11,7 @@ import Foundation
 struct TranslationEntity: Decodable {
     let converted: String
     let outputType: TranslationType
-    
+
     private enum CodingKeys: String, CodingKey {
         case converted
         case outputType = "output_type"
