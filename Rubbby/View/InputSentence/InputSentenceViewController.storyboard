@@ -207,7 +207,7 @@
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjh-CP-hs3">
                                                                         <rect key="frame" x="0.0" y="34" width="334" height="105"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <string key="text">漢字の入った文章を、ひらがなもしくはカタカナの文に変換することができます。
+                                                                        <string key="text">漢字の入った文章を、ひらがなもしくはカタカナの文章に変換することができます。
 上に表示されている入力フォームに変換したい文章を入力して、変換ボタンを押してください。
 変換完了後に結果が表示されます。</string>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
