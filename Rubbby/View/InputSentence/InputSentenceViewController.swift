@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class InputSentenceViewController: DisposableViewController {
 
     // MARK: IBOutlet
 
     @IBOutlet private weak var typeSegmentedControl: UISegmentedControl!
-    @IBOutlet private weak var closeButton: UIButton!
+    @IBOutlet private weak var outputTypeLabel: UILabel!
+    @IBOutlet private weak var clearButton: UIButton!
     @IBOutlet private weak var inputTextView: UITextView!
     @IBOutlet private weak var translateButton: UIButton!
     @IBOutlet private weak var usageButton: UIButton!
     @IBOutlet private weak var usageTextView: UITextView!
 
     // MARK: Properties
+
+    private var viewModel: InputSentenceViewModel!
 
     // MARK: Lifecycle
 
@@ -31,6 +35,8 @@ final class InputSentenceViewController: DisposableViewController {
         super.viewDidLoad()
         setupNavigation()
         setupSegmentedControl()
+        bindViews()
+        bindViewModel()
     }
 }
 
@@ -46,5 +52,50 @@ extension InputSentenceViewController {
         typeSegmentedControl.selectedSegmentTintColor = .primary
         typeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.primary], for: .normal)
         typeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+    }
+}
+
+// MARK: - ViewModel
+
+extension InputSentenceViewController {
+
+    private func bindViews() {
+        inputTextView.rx.text.orEmpty
+            .map { !$0.isEmpty }
+            .bind(to: translateButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+    }
+
+    private func bindViewModel() {
+        let viewModel = InputSentenceViewModel()
+        self.viewModel = viewModel
+
+        let input = InputSentenceViewModel.Input(changeTypeSegmentedControlSignal: typeSegmentedControl.rx.value.asSignal(onErrorSignalWith: .empty()),
+                                                 tapClearButtonSignal: clearButton.rx.tap.asSignal(onErrorSignalWith: .empty()),
+                                                 inputTextViewDriver: inputTextView.rx.text.orEmpty.asDriver(),
+                                                 tapTranslateButtonSignal: translateButton.rx.tap.asSignal(onErrorSignalWith: .empty()),
+                                                 tapUsegeButtonSignal: usageButton.rx.tap.asSignal(onErrorSignalWith: .empty()))
+        let output = viewModel.transform(input: input)
+
+        output.clearTextSignal
+            .emit(to: inputTextView.rx.text.orEmpty)
+            .disposed(by: disposeBag)
+        output.outputTypeDriver
+            .drive(outputTypeLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.hideUsageTextViewDriver
+            .drive(onNext: { [weak self] isHidden in self?.usageTextViewExpandAnimation(isHidden: isHidden) })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Animation
+
+extension InputSentenceViewController {
+
+    private func usageTextViewExpandAnimation(isHidden: Bool) {
+        UIView.animate(withDuration: 0.3) {
+            self.usageTextView.isHidden = isHidden
+        }
     }
 }
