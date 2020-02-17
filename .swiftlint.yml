@@ -108,10 +108,10 @@ opt_in_rules:
   #- file_header # ヘッダには特に決まりがないため
   - file_name
   - first_where
-  #- force_unwrapping
+  #- force_unwrapping # 強制アンラップをしようしたい場面があるため
   - function_default_parameter_at_end
   - identical_operands
-  - implicit_return
+  #- implicit_return # クロージャーだけでなく関数にも適応されてしまうため
   #- implicitly_unwrapped_optional # VIPERで変数を `!` で定義したいため
   - joined_default_parameter
   - last_where
