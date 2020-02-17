@@ -12,6 +12,7 @@ final class InputSentenceViewController: DisposableViewController {
 
     // MARK: IBOutlet
 
+    @IBOutlet private weak var typeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var inputTextView: UITextView!
     @IBOutlet private weak var translateButton: UIButton!
@@ -29,6 +30,7 @@ final class InputSentenceViewController: DisposableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        setupSegmentedControl()
     }
 }
 
@@ -38,5 +40,11 @@ extension InputSentenceViewController {
 
     private func setupNavigation() {
         navigationItem.title = "変換する"
+    }
+
+    private func setupSegmentedControl() {
+        typeSegmentedControl.selectedSegmentTintColor = .primary
+        typeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.primary], for: .normal)
+        typeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
     }
 }
