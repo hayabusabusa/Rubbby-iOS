@@ -184,3 +184,9 @@ line_length:
 identifier_name:
   min_length:
     warning: 2 # `id` や `up` などを使いたいため
+    
+nesting:
+  type_level:
+    warning: 2 # `typealias` が使いにくくなってしまうため
+  statement_level:
+    warning: 5
