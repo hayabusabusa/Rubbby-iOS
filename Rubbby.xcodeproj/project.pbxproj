@@ -32,6 +32,7 @@
 		A4F21F3823FA7CEF0032A2D0 /* InputSentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F21F3723FA7CEF0032A2D0 /* InputSentenceViewController.swift */; };
 		A4F21F3C23FA7D300032A2D0 /* DisposableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F21F3B23FA7D300032A2D0 /* DisposableViewController.swift */; };
 		A4F21F3E23FA7D790032A2D0 /* InputSentenceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F21F3D23FA7D790032A2D0 /* InputSentenceViewController.storyboard */; };
+		A4F21F4023FA7DE90032A2D0 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F21F3F23FA7DE90032A2D0 /* Storyboard.swift */; };
 		A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */; };
 		A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00823F63B22001D37E4 /* Translator.swift */; };
 		A4F9D00B23F63B5B001D37E4 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D00A23F63B5B001D37E4 /* Translation.swift */; };
@@ -103,6 +104,7 @@
 		A4F21F3723FA7CEF0032A2D0 /* InputSentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSentenceViewController.swift; sourceTree = "<group>"; };
 		A4F21F3B23FA7D300032A2D0 /* DisposableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableViewController.swift; sourceTree = "<group>"; };
 		A4F21F3D23FA7D790032A2D0 /* InputSentenceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputSentenceViewController.storyboard; sourceTree = "<group>"; };
+		A4F21F3F23FA7DE90032A2D0 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaTranslationRepository.swift; sourceTree = "<group>"; };
 		A4F9D00823F63B22001D37E4 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		A4F9D00A23F63B5B001D37E4 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
@@ -286,8 +288,8 @@
 		A4F21F3223FA7AF50032A2D0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A4F21F3A23FA7D190032A2D0 /* ViewController */,
 				A4F21F3323FA7B020032A2D0 /* View */,
+				A4F21F3A23FA7D190032A2D0 /* ViewController */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -353,6 +355,7 @@
 		A4F9D02523F65205001D37E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4F21F3F23FA7DE90032A2D0 /* Storyboard.swift */,
 				A4F21F3623FA7C6C0032A2D0 /* InputSentence */,
 				A4F9D02623F65221001D37E4 /* Prototype */,
 				A4F21F3223FA7AF50032A2D0 /* Common */,
@@ -555,6 +558,7 @@
 				A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */,
 				A4F9D02823F65232001D37E4 /* PrototypeViewController.swift in Sources */,
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
+				A4F21F4023FA7DE90032A2D0 /* Storyboard.swift in Sources */,
 				A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
