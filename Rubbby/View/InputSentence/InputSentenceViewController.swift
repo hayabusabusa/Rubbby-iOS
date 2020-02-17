@@ -14,7 +14,8 @@ final class InputSentenceViewController: DisposableViewController {
     // MARK: IBOutlet
 
     @IBOutlet private weak var typeSegmentedControl: UISegmentedControl!
-    @IBOutlet private weak var closeButton: UIButton!
+    @IBOutlet private weak var outputTypeLabel: UILabel!
+    @IBOutlet private weak var clearButton: UIButton!
     @IBOutlet private weak var inputTextView: UITextView!
     @IBOutlet private weak var translateButton: UIButton!
     @IBOutlet private weak var usageButton: UIButton!
@@ -60,5 +61,22 @@ extension InputSentenceViewController {
     private func bindViewModel() {
         let viewModel = InputSentenceViewModel()
         self.viewModel = viewModel
+
+        let input = InputSentenceViewModel.Input(changeTypeSegmentedControlSignal: typeSegmentedControl.rx.value.asSignal(onErrorSignalWith: .empty()),
+                                                 tapClearButtonSignal: clearButton.rx.tap.asSignal(onErrorSignalWith: .empty()),
+                                                 inputTextViewDriver: inputTextView.rx.text.orEmpty.asDriver(),
+                                                 tapTranslateButtonSignal: translateButton.rx.tap.asSignal(onErrorSignalWith: .empty()),
+                                                 tapUsegeButtonSignal: usageButton.rx.tap.asSignal(onErrorSignalWith: .empty()))
+        let output = viewModel.transform(input: input)
+
+        output.clearTextSignal
+            .emit(to: inputTextView.rx.text.orEmpty)
+            .disposed(by: disposeBag)
+        output.outputTypeDriver
+            .drive(outputTypeLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.hideUsageTextViewDriver
+            .drive(usageTextView.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
