@@ -53,6 +53,13 @@ extension InputSentenceViewModel: ViewModelType {
         input.changeTypeSegmentedControlSignal.map { $0 == 0 ? "ひらがな" : "カタカナ" }
             .emit(to: outputTypeRelay)
             .disposed(by: disposeBag)
+        // NOTE: 変換ボタンが押された際にAPIへPOSTのリクエストを行う.
+        input.tapTranslateButtonSignal
+            .withLatestFrom(input.inputTextViewDriver)
+            .emit(onNext: { sentence in
+                print(sentence)
+            })
+            .disposed(by: disposeBag)
         // NOTE: 使い方を表示するボタンがタップされた際に `TextView` を表示、非表示にする値を流す.
         input.tapUsegeButtonSignal.map { !hideUsageTextViewRelay.value }
             .emit(to: hideUsageTextViewRelay)
