@@ -16,6 +16,10 @@ final class InputSentenceViewController: DisposableViewController {
 
     // MARK: Lifecycle
 
+    static func instantiate() -> InputSentenceViewController {
+        return Storyboard.InputSentenceViewController.instantiate(InputSentenceViewController.self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
