@@ -19,18 +19,18 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nih-gN-3gX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-Pg-bBa">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="556"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-Pg-bBa">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="563"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AP-I5-4ke" userLabel="Spacer">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="geS-Hd-zMr"/>
+                                                    <constraint firstAttribute="height" constant="24" id="geS-Hd-zMr"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4V-ZA-Zow" userLabel="Layout Segmented Control">
-                                                <rect key="frame" x="0.0" y="52" width="414" height="32"/>
+                                                <rect key="frame" x="0.0" y="44" width="414" height="32"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2WJ-7V-WrR">
                                                         <rect key="frame" x="24" y="0.0" width="366" height="33"/>
@@ -53,32 +53,32 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-TZ-m7a" userLabel="Layout Input Form">
-                                                <rect key="frame" x="0.0" y="96" width="414" height="225"/>
+                                                <rect key="frame" x="0.0" y="96" width="414" height="213"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4T-y7-hOk" customClass="ContainerView" customModule="Rubbby" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="8" width="366" height="209"/>
+                                                        <rect key="frame" x="24" y="8" width="366" height="197"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7oH-es-ate">
-                                                                <rect key="frame" x="16" y="16" width="334" height="177"/>
+                                                                <rect key="frame" x="16" y="16" width="334" height="165"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JgW-lv-MAe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="agi-AF-NeR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="224" height="48"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="24"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字の入った文章" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vh-iY-GcL">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="112" height="48"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="112" height="24"/>
                                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="dYS-gD-uQD">
-                                                                                        <rect key="frame" x="116" y="0.0" width="48" height="48"/>
+                                                                                        <rect key="frame" x="116" y="0.0" width="24" height="24"/>
                                                                                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ひらがな" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrP-M0-jur">
-                                                                                        <rect key="frame" x="168" y="0.0" width="56" height="48"/>
+                                                                                        <rect key="frame" x="144" y="0.0" width="56" height="24"/>
                                                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -86,21 +86,21 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmK-09-mP7">
-                                                                                <rect key="frame" x="286" y="0.0" width="48" height="48"/>
+                                                                                <rect key="frame" x="310" y="0.0" width="24" height="24"/>
                                                                                 <color key="tintColor" white="0.66666666666666663" alpha="0.5997699058219178" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <state key="normal" backgroundImage="ic_close_circle"/>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izu-q1-u9Y">
-                                                                        <rect key="frame" x="0.0" y="60" width="334" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="36" width="334" height="1"/>
                                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="WtU-Hs-PFR"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pt9-vR-f6M" customClass="TextView" customModule="Rubbby" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="73" width="334" height="52"/>
+                                                                        <rect key="frame" x="0.0" y="49" width="334" height="52"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
@@ -113,10 +113,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InF-nN-Vxt">
-                                                                        <rect key="frame" x="0.0" y="137" width="334" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="113" width="334" height="52"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY3-7g-OhP" customClass="Button" customModule="Rubbby" customModuleProvider="target">
-                                                                                <rect key="frame" x="238" y="0.0" width="96" height="40"/>
+                                                                                <rect key="frame" x="238" y="12" width="96" height="40"/>
                                                                                 <color key="backgroundColor" name="Primary"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="ZUf-XF-rY1"/>
@@ -136,7 +136,7 @@
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="bottom" secondItem="qY3-7g-OhP" secondAttribute="bottom" id="YY6-VS-QxF"/>
-                                                                            <constraint firstItem="qY3-7g-OhP" firstAttribute="top" secondItem="InF-nN-Vxt" secondAttribute="top" id="eO6-Wu-hjP"/>
+                                                                            <constraint firstItem="qY3-7g-OhP" firstAttribute="top" secondItem="InF-nN-Vxt" secondAttribute="top" constant="12" id="eO6-Wu-hjP"/>
                                                                             <constraint firstAttribute="trailing" secondItem="qY3-7g-OhP" secondAttribute="trailing" id="hTx-Ol-U9d"/>
                                                                         </constraints>
                                                                     </view>
@@ -178,13 +178,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ke-rq-JdE" userLabel="Layout Usage">
-                                                <rect key="frame" x="0.0" y="333" width="414" height="171"/>
+                                                <rect key="frame" x="0.0" y="329" width="414" height="174"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBt-WB-l8Q" customClass="ContainerView" customModule="Rubbby" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="0.0" width="366" height="171"/>
+                                                        <rect key="frame" x="24" y="0.0" width="366" height="174"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qxC-Dg-3RA">
-                                                                <rect key="frame" x="16" y="16" width="334" height="139"/>
+                                                                <rect key="frame" x="16" y="16" width="334" height="142"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZVf-1I-Wu0">
                                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
@@ -205,13 +205,13 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjh-CP-hs3">
-                                                                        <rect key="frame" x="0.0" y="34" width="334" height="105"/>
+                                                                        <rect key="frame" x="0.0" y="30" width="334" height="112"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <string key="text">漢字の入った文章を、ひらがなもしくはカタカナの文章に変換することができます。
-上に表示されている入力フォームに変換したい文章を入力して、変換ボタンを押してください。
+上に表示されている入力フォームに変換したい文章を入力して、変換ボタンをタップしてください。
 変換完了後に結果が表示されます。</string>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     </textView>
                                                                 </subviews>
@@ -240,7 +240,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akq-BN-iGC" userLabel="Spacer">
-                                                <rect key="frame" x="0.0" y="516" width="414" height="40"/>
+                                                <rect key="frame" x="0.0" y="523" width="414" height="40"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="uOG-o4-zdA"/>
