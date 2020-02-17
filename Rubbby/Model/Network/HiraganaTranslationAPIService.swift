@@ -16,21 +16,21 @@ protocol HiraganaTranslationAPI {
 }
 
 final class HiraganaTranslationAPIService: HiraganaTranslationAPI {
-    
+
     // MARK: Singletone
-    
+
     static let shared: HiraganaTranslationAPIService = .init()
-    
+
     // MARK: Properties
-    
+
     private let provider: MoyaProvider<MultiTarget> = .init()
-    
+
     // MARK: Initializer
-    
+
     private init() {}
-    
+
     // MARK: Request
-    
+
     func request<T: HiraganaTranslationAPITargetType>(_ request: T) -> Single<T.Response> {
         let target = MultiTarget(request)
         return provider.rx.request(target)

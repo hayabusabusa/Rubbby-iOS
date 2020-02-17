@@ -18,19 +18,19 @@ protocol HiraganaTranslationRepository {
 // MARK: - Implementation
 
 struct HiraganaTranslationRepositoryImpl: HiraganaTranslationRepository {
-    
+
     // MARK: Dependency
-    
+
     private let api: HiraganaTranslationAPI
-    
+
     // MARK: Initializer
-    
+
     init(api: HiraganaTranslationAPI = HiraganaTranslationAPIService.shared) {
         self.api = api
     }
-    
+
     // MARK: API
-    
+
     func postSentence(with request: HiraganaTranslationAPIService.PostSentenceRequest) -> Single<TranslationEntity> {
         return api.request(request)
     }

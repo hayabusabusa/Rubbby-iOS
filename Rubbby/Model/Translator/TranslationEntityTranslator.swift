@@ -11,7 +11,7 @@ import Foundation
 struct TranslationEntityTranslator: Translator {
     typealias Input = TranslationEntity
     typealias Output = Translation
-    
+
     func translate(_ input: TranslationEntity) throws -> Translation {
         return Translation(converted: input.converted, outputType: input.outputType)
     }
