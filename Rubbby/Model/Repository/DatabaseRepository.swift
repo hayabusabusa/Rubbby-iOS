@@ -19,23 +19,23 @@ protocol DatabaseRepository {
 // MARK: - Implementation
 
 struct DatabaseRepositoryImpl: DatabaseRepository {
-    
+
     // MARK: Dependency
-    
+
     private let realmManager: RealmManagerProtocol
-    
+
     // MARK: Initialzer
-    
+
     init(realmManager: RealmManagerProtocol = RealmManager()) {
         self.realmManager = realmManager
     }
-    
+
     // MARK: Realm
-    
+
     func saveHistory(_ history: HistoryEntity) -> Completable {
         return realmManager.save(history)
     }
-    
+
     func getHistories() -> Single<[HistoryEntity]> {
         return realmManager.get(HistoryEntity.self)
     }

@@ -50,11 +50,11 @@ struct RealmManager: RealmManagerProtocol {
             return Disposables.create()
         }
     }
-    
+
     func get<T: Object>(_ objectType: T.Type) -> Single<[T]> {
         return Single.create { observer in
             let objects = self.realm.objects(objectType)
-            observer(.success(objects.map { $0 }))
+            observer(.success(Array(objects)))
             return Disposables.create()
         }
     }
