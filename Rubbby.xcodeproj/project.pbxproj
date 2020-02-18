@@ -24,6 +24,7 @@
 		A443841023FB71A900F1E1ED /* ResultHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840E23FB71A900F1E1ED /* ResultHistoryCell.swift */; };
 		A443841123FB71A900F1E1ED /* ResultHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A443840F23FB71A900F1E1ED /* ResultHistoryCell.xib */; };
 		A443841323FB7ACB00F1E1ED /* ResultCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443841223FB7ACB00F1E1ED /* ResultCellType.swift */; };
+		A443841523FB847100F1E1ED /* InputSentenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443841423FB847100F1E1ED /* InputSentenceModel.swift */; };
 		A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0972023F50483008BBC33 /* AppDelegate.swift */; };
 		A4F0972A23F50487008BBC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4F0972923F50487008BBC33 /* Assets.xcassets */; };
 		A4F0972D23F50487008BBC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F0972B23F50487008BBC33 /* LaunchScreen.storyboard */; };
@@ -106,6 +107,7 @@
 		A443840E23FB71A900F1E1ED /* ResultHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHistoryCell.swift; sourceTree = "<group>"; };
 		A443840F23FB71A900F1E1ED /* ResultHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultHistoryCell.xib; sourceTree = "<group>"; };
 		A443841223FB7ACB00F1E1ED /* ResultCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCellType.swift; sourceTree = "<group>"; };
+		A443841423FB847100F1E1ED /* InputSentenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSentenceModel.swift; sourceTree = "<group>"; };
 		A4F0971D23F50483008BBC33 /* Rubbby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubbby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F0972023F50483008BBC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F0972923F50487008BBC33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				71536D7D23F57C0F004A330C /* Network */,
 				A4F0976223F538E3008BBC33 /* Entity */,
 				A4F9D03123F656FF001D37E4 /* PrototypeModel.swift */,
+				A443841423FB847100F1E1ED /* InputSentenceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
 				A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */,
 				A4F9D02823F65232001D37E4 /* PrototypeViewController.swift in Sources */,
+				A443841523FB847100F1E1ED /* InputSentenceModel.swift in Sources */,
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
 				A4F21F4023FA7DE90032A2D0 /* Storyboard.swift in Sources */,
 				A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */,
