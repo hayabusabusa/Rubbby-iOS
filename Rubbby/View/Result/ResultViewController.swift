@@ -13,7 +13,8 @@ final class ResultViewController: DisposableViewController {
     // MARK: IBOutlet
 
     @IBOutlet private weak var tableView: UITableView!
-
+    @IBOutlet private weak var backButton: Button!
+    
     // MARK: Properties
 
     // MARK: Lifecycle
