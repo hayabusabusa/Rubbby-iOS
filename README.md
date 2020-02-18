@@ -33,6 +33,7 @@ carthage bootstrap --platform iOS
 ## 使用ライブラリ
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [Moya](https://github.com/Moya/Moya)
+- [Realm](https://github.com/realm/realm-cocoa)
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
 - [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
 
