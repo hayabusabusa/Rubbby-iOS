@@ -32,7 +32,6 @@ extension ResultViewModel: ViewModelType {
     // MARK: I/O
 
     struct Input {
-        //let tapCopyButtonSignal: Signal<Void>
         let tapBackButtonSignal: Signal<Void>
     }
 
