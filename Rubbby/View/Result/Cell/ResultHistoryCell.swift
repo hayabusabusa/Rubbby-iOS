@@ -1,5 +1,5 @@
 //
-//  ResultTitleCell.swift
+//  ResultHistoryCell.swift
 //  Rubbby
 //
 //  Created by Yamada Shunya on 2020/02/18.
@@ -8,19 +8,20 @@
 
 import UIKit
 
-class ResultTitleCell: UITableViewCell {
+class ResultHistoryCell: UITableViewCell {
 
     // MARK: IBOutlet
 
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var convertedTextLabel: UILabel!
+    @IBOutlet private weak var originalTextLabel: UILabel!
 
     // MARK: Properties
 
-    static let reuseIdentifier = "ResultTitleCell"
+    static let reuseIdentifier = "ResultHistoryCell"
     static let rowHeight: CGFloat = UITableView.automaticDimension
-    static let estimatedRowHeitht: CGFloat = 44
+    static let estimatedRowHeight: CGFloat = 88
     static var nib: UINib {
-        return UINib(nibName: "ResultTitleCell", bundle: nil)
+        return UINib(nibName: "ResultHistoryCell", bundle: nil)
     }
 
     // MARK: Lifecycle
