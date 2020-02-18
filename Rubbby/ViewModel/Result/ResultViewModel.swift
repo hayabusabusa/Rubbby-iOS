@@ -11,31 +11,42 @@ import RxSwift
 import RxCocoa
 
 final class ResultViewModel {
-    
+
     // MARK: Dependency
-    
+
+    private let translation: Translation
+
     // MARK: Propreties
-    
+
     private let disposeBag = DisposeBag()
-    
+
     // MARK: Initializer
+
+    init(translation: Translation) {
+        self.translation = translation
+    }
 }
 
 extension ResultViewModel: ViewModelType {
-    
+
     // MARK: I/O
-    
+
     struct Input {
-        
+        //let tapCopyButtonSignal: Signal<Void>
+        let tapBackButtonSignal: Signal<Void>
     }
-    
+
     struct Output {
-        
+        let dataSourceDriver: Driver<[ResultCellType]>
+        let dismiss: Signal<Void>
     }
-    
+
     // MARK: Transform I/O
-    
+
     func transform(input: ResultViewModel.Input) -> ResultViewModel.Output {
-        return Output()
+        let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
+
+        return Output(dataSourceDriver: dataSourceRelay.asDriver(),
+                      dismiss: input.tapBackButtonSignal)
     }
 }

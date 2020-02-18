@@ -17,6 +17,8 @@ final class ResultViewController: DisposableViewController {
 
     // MARK: Properties
 
+    private var viewModel: ResultViewModel!
+
     private var dataSource: [ResultCellType] = [
         .output(translation: Translation(converted: "Converted", outputType: .hiragana)),
         .title(title: "変換履歴"),
@@ -28,14 +30,17 @@ final class ResultViewController: DisposableViewController {
 
     // MARK: Lifecycle
 
-    static func instantiate() -> ResultViewController {
-        return Storyboard.ResultViewController.instantiate(ResultViewController.self)
+    static func configure(with translation: Translation) -> ResultViewController {
+        let vc = Storyboard.ResultViewController.instantiate(ResultViewController.self)
+        vc.viewModel = ResultViewModel(translation: translation)
+        return vc
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
         setupTableView()
+        bindViewModel()
     }
 }
 
@@ -56,6 +61,20 @@ extension ResultViewController {
         tableView.register(ResultCell.nib, forCellReuseIdentifier: ResultCell.reuseIdentifier)
         tableView.register(ResultTitleCell.nib, forCellReuseIdentifier: ResultTitleCell.reuseIdentifier)
         tableView.register(ResultHistoryCell.nib, forCellReuseIdentifier: ResultHistoryCell.reuseIdentifier)
+    }
+}
+
+// MARK: - ViewModel
+
+extension ResultViewController {
+
+    private func bindViewModel() {
+        let input = ResultViewModel.Input(tapBackButtonSignal: backButton.rx.tap.asSignal())
+        let output = viewModel.transform(input: input)
+
+        output.dismiss
+            .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+            .disposed(by: disposeBag)
     }
 }
 
