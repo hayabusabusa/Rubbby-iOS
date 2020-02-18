@@ -14,8 +14,17 @@ final class ResultViewController: DisposableViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var backButton: Button!
-    
+
     // MARK: Properties
+
+    private var dataSource: [ResultCellType] = [
+        .output(translation: Translation(converted: "Converted", outputType: .hiragana)),
+        .title(title: "変換履歴"),
+        .history(translation: Translation(converted: "", outputType: .hiragana)),
+        .history(translation: Translation(converted: "", outputType: .katakana)),
+        .history(translation: Translation(converted: "", outputType: .hiragana)),
+        .history(translation: Translation(converted: "", outputType: .hiragana))
+    ]
 
     // MARK: Lifecycle
 
@@ -53,13 +62,23 @@ extension ResultViewController {
 extension ResultViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dataSource.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier, for: indexPath) as? ResultCell else {
-            return UITableViewCell()
+        switch dataSource[indexPath.row] {
+        case .output:
+            guard let cell = tableView
+                .dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier, for: indexPath) as? ResultCell else { return UITableViewCell() }
+            return cell
+        case .title:
+            guard let cell = tableView
+                .dequeueReusableCell(withIdentifier: ResultTitleCell.reuseIdentifier, for: indexPath) as? ResultTitleCell else { return UITableViewCell() }
+            return cell
+        case .history:
+            guard let cell = tableView
+                .dequeueReusableCell(withIdentifier: ResultHistoryCell.reuseIdentifier, for: indexPath) as? ResultHistoryCell else { return UITableViewCell() }
+            return cell
         }
-        return cell
     }
 }

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 
     private func setupRootViewController() {
-        let vc = NavigationController(rootViewController: InputSentenceViewController.instantiate())
+        let vc = NavigationController(rootViewController: ResultViewController.instantiate())
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         window.rootViewController = vc
