@@ -12,6 +12,8 @@ final class ResultViewController: DisposableViewController {
 
     // MARK: IBOutlet
 
+    @IBOutlet private weak var tableView: UITableView!
+
     // MARK: Properties
 
     // MARK: Lifecycle
@@ -22,5 +24,15 @@ final class ResultViewController: DisposableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
+    }
+}
+
+// MARK: - Setup
+
+extension ResultViewController {
+
+    private func setupNavigation() {
+        navigationItem.title = "変換結果"
     }
 }
