@@ -12,6 +12,7 @@ import UIKit
 // swiftlint:disable identifier_name
 enum Storyboard: String {
     case InputSentenceViewController
+    case ResultViewController
 
     func instantiate<VC: UIViewController>(_: VC.Type, inBundle: Bundle? = nil) -> VC {
         guard let vc = UIStoryboard(name: self.rawValue, bundle: inBundle).instantiateInitialViewController() as? VC else {

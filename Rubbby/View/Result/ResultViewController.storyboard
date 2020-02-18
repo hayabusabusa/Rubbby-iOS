@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GUM-lz-9Tw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Result View Controller-->
+        <scene sceneID="liH-Pt-Iiz">
+            <objects>
+                <viewController id="GUM-lz-9Tw" customClass="ResultViewController" customModule="Rubbby" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JLw-O1-Pvk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="izm-Ss-A9p">
+                                <rect key="frame" x="0.0" y="44" width="414" height="750"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYr-q7-gbh" userLabel="Layout Button">
+                                <rect key="frame" x="0.0" y="794" width="414" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdH-FW-GUx" customClass="Button" customModule="Rubbby" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="16" width="366" height="44"/>
+                                        <color key="backgroundColor" name="Primary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="u16-LV-x8J"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="別の文章を変換する">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xea-d8-VB5">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="w4Q-gA-CwI"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Xea-d8-VB5" secondAttribute="trailing" id="D5t-6z-csn"/>
+                                    <constraint firstItem="UdH-FW-GUx" firstAttribute="leading" secondItem="GYr-q7-gbh" secondAttribute="leading" constant="24" id="YaY-em-hDI"/>
+                                    <constraint firstAttribute="trailing" secondItem="UdH-FW-GUx" secondAttribute="trailing" constant="24" id="aPx-PR-Jyu"/>
+                                    <constraint firstItem="Xea-d8-VB5" firstAttribute="top" secondItem="GYr-q7-gbh" secondAttribute="top" id="dDI-LG-ZGG"/>
+                                    <constraint firstItem="UdH-FW-GUx" firstAttribute="top" secondItem="GYr-q7-gbh" secondAttribute="top" constant="16" id="qLa-cu-Q6w"/>
+                                    <constraint firstItem="Xea-d8-VB5" firstAttribute="leading" secondItem="GYr-q7-gbh" secondAttribute="leading" id="tx0-ZF-LVg"/>
+                                    <constraint firstAttribute="bottom" secondItem="UdH-FW-GUx" secondAttribute="bottom" constant="8" id="x6g-4e-Y6W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GYr-q7-gbh" firstAttribute="top" secondItem="izm-Ss-A9p" secondAttribute="bottom" id="89Q-qQ-Aqe"/>
+                            <constraint firstItem="izm-Ss-A9p" firstAttribute="trailing" secondItem="fhf-Ul-7eW" secondAttribute="trailing" id="A4c-xO-04a"/>
+                            <constraint firstItem="izm-Ss-A9p" firstAttribute="top" secondItem="fhf-Ul-7eW" secondAttribute="top" id="EHM-Js-Ulu"/>
+                            <constraint firstItem="fhf-Ul-7eW" firstAttribute="bottom" secondItem="GYr-q7-gbh" secondAttribute="bottom" id="MJ4-rs-eHb"/>
+                            <constraint firstItem="izm-Ss-A9p" firstAttribute="leading" secondItem="fhf-Ul-7eW" secondAttribute="leading" id="QKI-c3-L3F"/>
+                            <constraint firstItem="GYr-q7-gbh" firstAttribute="trailing" secondItem="fhf-Ul-7eW" secondAttribute="trailing" id="QhE-rq-dMJ"/>
+                            <constraint firstItem="GYr-q7-gbh" firstAttribute="leading" secondItem="fhf-Ul-7eW" secondAttribute="leading" id="uf7-Gb-0cm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fhf-Ul-7eW"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="UdH-FW-GUx" id="upG-AB-05V"/>
+                        <outlet property="tableView" destination="izm-Ss-A9p" id="SDo-cj-rgu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gg-zT-8Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321.73913043478262" y="-240.40178571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Primary">
+            <color red="0.61599999666213989" green="0.043000001460313797" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
