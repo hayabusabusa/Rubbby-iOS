@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ResultHistoryCell: UITableViewCell {
 
@@ -14,7 +16,6 @@ class ResultHistoryCell: UITableViewCell {
 
     @IBOutlet private weak var convertedTextLabel: UILabel!
     @IBOutlet private weak var originalTextLabel: UILabel!
-    @IBOutlet private weak var copyButton: UIButton!
 
     // MARK: Properties
 
@@ -36,4 +37,9 @@ class ResultHistoryCell: UITableViewCell {
     }
 
     // MARK: Setup
+
+    func setupCell(convertedText: String, originalText: String) {
+        convertedTextLabel.text = convertedText
+        originalTextLabel.text = originalText
+    }
 }

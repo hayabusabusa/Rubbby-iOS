@@ -34,4 +34,8 @@ class ResultTitleCell: UITableViewCell {
     }
 
     // MARK: Setup
+
+    func setupCell(title: String) {
+        titleLabel.text = title
+    }
 }

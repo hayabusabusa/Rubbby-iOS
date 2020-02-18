@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ResultViewController: DisposableViewController {
 
@@ -17,25 +19,21 @@ final class ResultViewController: DisposableViewController {
 
     // MARK: Properties
 
-    private var dataSource: [ResultCellType] = [
-        .output(translation: Translation(converted: "Converted", outputType: .hiragana)),
-        .title(title: "変換履歴"),
-        .history(translation: Translation(converted: "", outputType: .hiragana)),
-        .history(translation: Translation(converted: "", outputType: .katakana)),
-        .history(translation: Translation(converted: "", outputType: .hiragana)),
-        .history(translation: Translation(converted: "", outputType: .hiragana))
-    ]
+    private var viewModel: ResultViewModel!
 
     // MARK: Lifecycle
 
-    static func instantiate() -> ResultViewController {
-        return Storyboard.ResultViewController.instantiate(ResultViewController.self)
+    static func configure(with translation: Translation) -> ResultViewController {
+        let vc = Storyboard.ResultViewController.instantiate(ResultViewController.self)
+        vc.viewModel = ResultViewModel(translation: translation)
+        return vc
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
         setupTableView()
+        bindViewModel()
     }
 }
 
@@ -48,7 +46,6 @@ extension ResultViewController {
     }
 
     private func setupTableView() {
-        tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.rowHeight = ResultCell.rowHeight
         tableView.estimatedRowHeight = ResultHistoryCell.rowHeight
@@ -59,28 +56,53 @@ extension ResultViewController {
     }
 }
 
-// MARK: - TableView dataSource
+// MARK: - ViewModel
 
-extension ResultViewController: UITableViewDataSource {
+extension ResultViewController {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+    private func bindViewModel() {
+        let input = ResultViewModel.Input(tapBackButtonSignal: backButton.rx.tap.asSignal())
+        let output = viewModel.transform(input: input)
+
+        output.dismiss
+            .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+            .disposed(by: disposeBag)
+        output.setPasteboardSignal
+            .emit(onNext: { [weak self] text in self?.setTextOnPasteboard(text: text) })
+            .disposed(by: disposeBag)
+        output.dataSourceDriver
+            .drive(tableView.rx.items) { tableView, _, element in
+                switch element {
+                case .output(let translation):
+                    guard let cell = tableView
+                        .dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier) as? ResultCell else { return UITableViewCell() }
+
+                    cell.setupCell(outputText: translation.converted, originalText: "")
+                    _ = cell.copyButton.rx.tap
+                        .takeUntil(cell.rx.sentMessage(#selector(UITableViewCell.prepareForReuse)))
+                        .concat(Observable.never())
+                        .bind(to: output.tapCopyButtonRelay)
+                    return cell
+                case .title(let title):
+                    guard let cell = tableView
+                        .dequeueReusableCell(withIdentifier: ResultTitleCell.reuseIdentifier) as? ResultTitleCell else { return UITableViewCell() }
+                    cell.setupCell(title: title)
+                    return cell
+                case .history:
+                    guard let cell = tableView
+                        .dequeueReusableCell(withIdentifier: ResultHistoryCell.reuseIdentifier) as? ResultHistoryCell else { return UITableViewCell() }
+                    cell.setupCell(convertedText: "Converted", originalText: "Original")
+                    return cell
+                }
+            }.disposed(by: disposeBag)
     }
+}
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch dataSource[indexPath.row] {
-        case .output:
-            guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier, for: indexPath) as? ResultCell else { return UITableViewCell() }
-            return cell
-        case .title:
-            guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: ResultTitleCell.reuseIdentifier, for: indexPath) as? ResultTitleCell else { return UITableViewCell() }
-            return cell
-        case .history:
-            guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: ResultHistoryCell.reuseIdentifier, for: indexPath) as? ResultHistoryCell else { return UITableViewCell() }
-            return cell
-        }
+// MARK: Pasteboard
+
+extension ResultViewController {
+
+    func setTextOnPasteboard(text: String) {
+        UIPasteboard.general.string = text
     }
 }

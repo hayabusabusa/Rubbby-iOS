@@ -111,7 +111,7 @@ extension InputSentenceViewController {
 extension InputSentenceViewController {
 
     private func presentResult(translation: Translation) {
-        let vc = NavigationController(rootViewController: ResultViewController.instantiate())
+        let vc = NavigationController(rootViewController: ResultViewController.configure(with: translation))
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
