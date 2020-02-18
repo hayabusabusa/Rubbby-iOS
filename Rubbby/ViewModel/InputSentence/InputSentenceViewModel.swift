@@ -43,6 +43,7 @@ extension InputSentenceViewModel: ViewModelType {
         let clearTextSignal: Signal<String>
         let outputTypeDriver: Driver<String>
         let hideUsageTextViewDriver: Driver<Bool>
+        let presentResult: Signal<Translation>
     }
 
     // MARK: Transform I/O
@@ -51,6 +52,7 @@ extension InputSentenceViewModel: ViewModelType {
         let inputTextRelay: BehaviorRelay<String> = .init(value: "")
         let outputTypeRelay: BehaviorRelay<String> = .init(value: "ひらがな")
         let hideUsageTextViewRelay: BehaviorRelay<Bool> = .init(value: true)
+        let presentResultRelay: PublishRelay<Translation> = .init()
 
         input.inputTextViewDriver
             .drive(inputTextRelay)
@@ -67,7 +69,7 @@ extension InputSentenceViewModel: ViewModelType {
                 let outputType = outputTypeRelay.value == "ひらがな" ? TranslationType.hiragana : TranslationType.katakana
                 self.model.postSentence(appId: appID, sentence: sentence, outputType: outputType)
                     .subscribe(onSuccess: { translation in
-                        print(translation)
+                        presentResultRelay.accept(translation)
                     }, onError: { error in
                         print(error)
                     })
@@ -81,6 +83,7 @@ extension InputSentenceViewModel: ViewModelType {
 
         return Output(clearTextSignal: input.tapClearButtonSignal.map { "" },
                       outputTypeDriver: outputTypeRelay.asDriver(),
-                      hideUsageTextViewDriver: hideUsageTextViewRelay.asDriver())
+                      hideUsageTextViewDriver: hideUsageTextViewRelay.asDriver(),
+                      presentResult: presentResultRelay.asSignal())
     }
 }

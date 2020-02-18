@@ -86,6 +86,9 @@ extension InputSentenceViewController {
         output.hideUsageTextViewDriver
             .drive(onNext: { [weak self] isHidden in self?.usageTextViewExpandAnimation(isHidden: isHidden) })
             .disposed(by: disposeBag)
+        output.presentResult
+            .emit(onNext: { [weak self] translation in self?.presentResult(translation: translation) })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -97,5 +100,17 @@ extension InputSentenceViewController {
         UIView.animate(withDuration: 0.3) {
             self.usageTextView.isHidden = isHidden
         }
+    }
+}
+
+// MARK: - Transition
+
+extension InputSentenceViewController {
+
+    private func presentResult(translation: Translation) {
+        let vc = NavigationController(rootViewController: ResultViewController.instantiate())
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
 }
