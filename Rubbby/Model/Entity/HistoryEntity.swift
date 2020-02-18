@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class HistoryEntity: Object {
-    @objc dynamic var date: Date = Date()
+    @objc dynamic var date = Date()
     @objc dynamic var original: String = ""
     @objc dynamic var converted: String = ""
 }
