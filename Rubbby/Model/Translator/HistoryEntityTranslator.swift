@@ -11,7 +11,7 @@ import Foundation
 struct HistoryEntityTranslator: Translator {
     typealias Input = HistoryEntity
     typealias Output = History
-    
+
     func translate(_ input: HistoryEntity) throws -> History {
         return History(original: input.original,
                        converted: input.converted)

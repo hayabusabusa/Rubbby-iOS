@@ -21,6 +21,8 @@
 		71536DA923FC441E004A330C /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA823FC441E004A330C /* DatabaseRepository.swift */; };
 		71536DAC23FC48CB004A330C /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DAB23FC48CB004A330C /* ResultModel.swift */; };
 		71536DAE23FC4A1C004A330C /* HistoryEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */; };
+		71536DB123FC4E17004A330C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71536DAF23FC4E16004A330C /* Realm.framework */; };
+		71536DB323FC4E17004A330C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71536DB023FC4E16004A330C /* RealmSwift.framework */; };
 		A443840023FB6B5C00F1E1ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */; };
 		A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */; };
 		A443840823FB6E1900F1E1ED /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840623FB6E1900F1E1ED /* ResultCell.swift */; };
@@ -111,6 +113,8 @@
 		71536DA823FC441E004A330C /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		71536DAB23FC48CB004A330C /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntityTranslator.swift; sourceTree = "<group>"; };
+		71536DAF23FC4E16004A330C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		71536DB023FC4E16004A330C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		A443840623FB6E1900F1E1ED /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -170,11 +174,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71536DB123FC4E17004A330C /* Realm.framework in Frameworks */,
 				A4F0975123F50FDF008BBC33 /* RxCocoa.framework in Frameworks */,
 				A4F0975723F50FDF008BBC33 /* Moya.framework in Frameworks */,
 				A4F0974D23F50FDF008BBC33 /* RxMoya.framework in Frameworks */,
 				A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */,
 				A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */,
+				71536DB323FC4E17004A330C /* RealmSwift.framework in Frameworks */,
 				A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */,
 				A4F0975E23F5367C008BBC33 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				A4F0974B23F50FDF008BBC33 /* RxRelay.framework in Frameworks */,
@@ -308,6 +314,8 @@
 		A4F0974223F50FDF008BBC33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71536DAF23FC4E16004A330C /* Realm.framework */,
+				71536DB023FC4E16004A330C /* RealmSwift.framework */,
 				A4F9D01823F642FC001D37E4 /* RxBlocking.framework */,
 				A4F9D01723F642FC001D37E4 /* RxTest.framework */,
 				A4F0975D23F5367C008BBC33 /* IQKeyboardManagerSwift.framework */,
@@ -636,6 +644,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
