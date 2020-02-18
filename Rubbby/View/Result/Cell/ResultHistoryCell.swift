@@ -39,12 +39,8 @@ class ResultHistoryCell: UITableViewCell {
 
     // MARK: Setup
 
-    func setupCell(convertedText: String, originalText: String, tapCopyButtonRelay: PublishRelay<Void>) {
+    func setupCell(convertedText: String, originalText: String) {
         convertedTextLabel.text = convertedText
         originalTextLabel.text = originalText
-        _ = copyButton.rx.tap
-            .takeUntil(rx.sentMessage(#selector(UITableViewCell.prepareForReuse)))
-            .concat(Observable.never())
-            .bind(to: tapCopyButtonRelay)
     }
 }

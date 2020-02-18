@@ -36,21 +36,26 @@ extension ResultViewModel: ViewModelType {
     }
 
     struct Output {
-        let dataSourceDriver: Driver<[ResultCellType]>
-        let tapCopyButtonRelay: PublishRelay<Void>
         let dismiss: Signal<Void>
+        let tapCopyButtonRelay: PublishRelay<Void>
+        let setPasteboardSignal: Signal<String>
+        let dataSourceDriver: Driver<[ResultCellType]>
     }
 
     // MARK: Transform I/O
 
     func transform(input: ResultViewModel.Input) -> ResultViewModel.Output {
-        let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
         let tapCopyButtonRelay: PublishRelay<Void> = .init()
+        let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
 
         dataSourceRelay.accept([.output(translation: translation)])
 
-        return Output(dataSourceDriver: dataSourceRelay.asDriver(),
+        let setPasteboardSignal = tapCopyButtonRelay
+            .map { [weak self] in self?.translation.converted ?? "" }
+            .asSignal(onErrorSignalWith: .empty())
+        return Output(dismiss: input.tapBackButtonSignal,
                       tapCopyButtonRelay: tapCopyButtonRelay,
-                      dismiss: input.tapBackButtonSignal)
+                      setPasteboardSignal: setPasteboardSignal,
+                      dataSourceDriver: dataSourceRelay.asDriver())
     }
 }

@@ -14,7 +14,8 @@ class ResultCell: UITableViewCell {
 
     // MARK: IBOutlet
 
-    @IBOutlet private weak var copyButton: UIButton!
+    // NOTE: ボタンタップ時に `indexPath` を流すために ViewController へ公開するので以下のルールを無効にする
+    @IBOutlet weak var copyButton: UIButton! // swiftlint:disable:this private_outlet
     @IBOutlet private weak var outputTextView: UITextView!
     @IBOutlet private weak var originalTextView: UITextView!
 
@@ -39,12 +40,8 @@ class ResultCell: UITableViewCell {
 
     // MARK: Setup
 
-    func setupCell(outputText: String, originalText: String, tapCopyButtonRelay: PublishRelay<Void>) {
+    func setupCell(outputText: String, originalText: String) {
         outputTextView.text = outputText
         originalTextView.text = originalText
-        _ = copyButton.rx.tap
-            .takeUntil(rx.sentMessage(#selector(UITableViewCell.prepareForReuse)))
-            .concat(Observable.never())
-            .bind(to: tapCopyButtonRelay)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 import RxCocoa
 
 final class ResultViewController: DisposableViewController {
@@ -66,13 +67,21 @@ extension ResultViewController {
         output.dismiss
             .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
             .disposed(by: disposeBag)
+        output.setPasteboardSignal
+            .emit(onNext: { [weak self] text in self?.setTextOnPasteboard(text: text) })
+            .disposed(by: disposeBag)
         output.dataSourceDriver
             .drive(tableView.rx.items) { tableView, _, element in
                 switch element {
                 case .output(let translation):
                     guard let cell = tableView
                         .dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier) as? ResultCell else { return UITableViewCell() }
-                    cell.setupCell(outputText: translation.converted, originalText: "", tapCopyButtonRelay: output.tapCopyButtonRelay)
+
+                    cell.setupCell(outputText: translation.converted, originalText: "")
+                    _ = cell.copyButton.rx.tap
+                        .takeUntil(cell.rx.sentMessage(#selector(UITableViewCell.prepareForReuse)))
+                        .concat(Observable.never())
+                        .bind(to: output.tapCopyButtonRelay)
                     return cell
                 case .title(let title):
                     guard let cell = tableView
@@ -82,9 +91,18 @@ extension ResultViewController {
                 case .history:
                     guard let cell = tableView
                         .dequeueReusableCell(withIdentifier: ResultHistoryCell.reuseIdentifier) as? ResultHistoryCell else { return UITableViewCell() }
-                    cell.setupCell(convertedText: "Converted", originalText: "Original", tapCopyButtonRelay: output.tapCopyButtonRelay)
+                    cell.setupCell(convertedText: "Converted", originalText: "Original")
                     return cell
                 }
             }.disposed(by: disposeBag)
+    }
+}
+
+// MARK: Pasteboard
+
+extension ResultViewController {
+
+    func setTextOnPasteboard(text: String) {
+        UIPasteboard.general.string = text
     }
 }
