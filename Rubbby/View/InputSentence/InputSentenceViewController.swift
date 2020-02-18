@@ -77,6 +77,9 @@ extension InputSentenceViewController {
                                                  tapUsegeButtonSignal: usageButton.rx.tap.asSignal(onErrorSignalWith: .empty()))
         let output = viewModel.transform(input: input)
 
+        output.isLoading
+            .emit(to: rx.isLoading)
+            .disposed(by: disposeBag)
         output.clearTextSignal
             .emit(to: inputTextView.rx.text.orEmpty)
             .disposed(by: disposeBag)
