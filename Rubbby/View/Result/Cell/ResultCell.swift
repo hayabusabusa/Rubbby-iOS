@@ -36,4 +36,9 @@ class ResultCell: UITableViewCell {
     }
 
     // MARK: Setup
+
+    func setupCell(outputText: String, originalText: String) {
+        outputTextView.text = outputText
+        originalTextView.text = originalText
+    }
 }

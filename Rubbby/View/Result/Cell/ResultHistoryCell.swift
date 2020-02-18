@@ -36,4 +36,9 @@ class ResultHistoryCell: UITableViewCell {
     }
 
     // MARK: Setup
+
+    func setupCell(convertedText: String, originalText: String) {
+        convertedTextLabel.text = convertedText
+        originalTextLabel.text = originalText
+    }
 }
