@@ -20,15 +20,6 @@ final class ResultViewController: DisposableViewController {
 
     private var viewModel: ResultViewModel!
 
-    private var dataSource: [ResultCellType] = [
-        .output(translation: Translation(converted: "Converted", outputType: .hiragana)),
-        .title(title: "変換履歴"),
-        .history(translation: Translation(converted: "", outputType: .hiragana)),
-        .history(translation: Translation(converted: "", outputType: .katakana)),
-        .history(translation: Translation(converted: "", outputType: .hiragana)),
-        .history(translation: Translation(converted: "", outputType: .hiragana))
-    ]
-
     // MARK: Lifecycle
 
     static func configure(with translation: Translation) -> ResultViewController {
