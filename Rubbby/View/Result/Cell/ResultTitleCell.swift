@@ -1,5 +1,5 @@
 //
-//  ResultCell.swift
+//  ResultTitleCell.swift
 //  Rubbby
 //
 //  Created by Yamada Shunya on 2020/02/18.
@@ -8,21 +8,19 @@
 
 import UIKit
 
-class ResultCell: UITableViewCell {
+class ResultTitleCell: UITableViewCell {
 
     // MARK: IBOutlet
     
-    @IBOutlet private weak var copyButton: UIButton!
-    @IBOutlet private weak var outputTextView: UITextView!
-    @IBOutlet private weak var originalTextView: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: Properties
     
-    static let reuseIdentifier = "ResultCell"
+    static let reuseIdentifier = "ResultTitleCell"
     static let rowHeight: CGFloat = UITableView.automaticDimension
-    static let estimatedRowHeight: CGFloat = 172
+    static let estimatedRowHeitht: CGFloat = 44
     static var nib: UINib {
-        return UINib(nibName: "ResultCell", bundle: nil)
+        return UINib(nibName: "ResultTitleCell", bundle: nil)
     }
     
     // MARK: Lifecycle
