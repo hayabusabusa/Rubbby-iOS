@@ -25,6 +25,7 @@ final class ResultViewController: DisposableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        setupTableView()
     }
 }
 
@@ -34,5 +35,30 @@ extension ResultViewController {
 
     private func setupNavigation() {
         navigationItem.title = "変換結果"
+    }
+
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        tableView.register(ResultCell.nib, forCellReuseIdentifier: ResultCell.reuseIdentifier)
+        tableView.register(ResultTitleCell.nib, forCellReuseIdentifier: ResultTitleCell.reuseIdentifier)
+        tableView.register(ResultHistoryCell.nib, forCellReuseIdentifier: ResultHistoryCell.reuseIdentifier)
+    }
+}
+
+// MARK: - TableView dataSource
+
+extension ResultViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier, for: indexPath) as? ResultCell else {
+            return UITableViewCell()
+        }
+        return cell
     }
 }

@@ -14,6 +14,7 @@ class ResultHistoryCell: UITableViewCell {
 
     @IBOutlet private weak var convertedTextLabel: UILabel!
     @IBOutlet private weak var originalTextLabel: UILabel!
+    @IBOutlet private weak var copyButton: UIButton!
 
     // MARK: Properties
 
