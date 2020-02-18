@@ -18,6 +18,7 @@
 		71536DA223FC2659004A330C /* HistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA123FC2659004A330C /* HistoryEntity.swift */; };
 		71536DA423FC2B2F004A330C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA323FC2B2F004A330C /* History.swift */; };
 		71536DA723FC3DED004A330C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA623FC3DED004A330C /* RealmManager.swift */; };
+		71536DA923FC441E004A330C /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA823FC441E004A330C /* DatabaseRepository.swift */; };
 		A443840023FB6B5C00F1E1ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */; };
 		A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */; };
 		A443840823FB6E1900F1E1ED /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840623FB6E1900F1E1ED /* ResultCell.swift */; };
@@ -105,6 +106,7 @@
 		71536DA123FC2659004A330C /* HistoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntity.swift; sourceTree = "<group>"; };
 		71536DA323FC2B2F004A330C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		71536DA623FC3DED004A330C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		71536DA823FC441E004A330C /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		A443840623FB6E1900F1E1ED /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */,
+				71536DA823FC441E004A330C /* DatabaseRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				71536D9923FAC912004A330C /* TextView.swift in Sources */,
 				A4F0976423F53A05008BBC33 /* TranslationEntity.swift in Sources */,
 				A4F0976623F53B3B008BBC33 /* TranslationType.swift in Sources */,
+				71536DA923FC441E004A330C /* DatabaseRepository.swift in Sources */,
 				A4F9D02E23F6548F001D37E4 /* PrototypeViewModel.swift in Sources */,
 				A4F21F3C23FA7D300032A2D0 /* DisposableViewController.swift in Sources */,
 				A443841323FB7ACB00F1E1ED /* ResultCellType.swift in Sources */,
