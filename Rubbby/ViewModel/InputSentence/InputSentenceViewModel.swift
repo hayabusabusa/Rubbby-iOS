@@ -40,17 +40,21 @@ extension InputSentenceViewModel: ViewModelType {
     }
 
     struct Output {
+        let isLoading: Signal<Bool>
         let clearTextSignal: Signal<String>
         let outputTypeDriver: Driver<String>
         let hideUsageTextViewDriver: Driver<Bool>
+        let presentResult: Signal<Translation>
     }
 
     // MARK: Transform I/O
 
     func transform(input: InputSentenceViewModel.Input) -> InputSentenceViewModel.Output {
+        let isLoadingRelay: PublishRelay<Bool> = .init()
         let inputTextRelay: BehaviorRelay<String> = .init(value: "")
         let outputTypeRelay: BehaviorRelay<String> = .init(value: "ひらがな")
         let hideUsageTextViewRelay: BehaviorRelay<Bool> = .init(value: true)
+        let presentResultRelay: PublishRelay<Translation> = .init()
 
         input.inputTextViewDriver
             .drive(inputTextRelay)
@@ -64,11 +68,15 @@ extension InputSentenceViewModel: ViewModelType {
             .withLatestFrom(input.inputTextViewDriver)
             .emit(onNext: { [weak self] sentence in
                 guard let self = self else { return }
+
+                isLoadingRelay.accept(true) // Show indicator
                 let outputType = outputTypeRelay.value == "ひらがな" ? TranslationType.hiragana : TranslationType.katakana
                 self.model.postSentence(appId: appID, sentence: sentence, outputType: outputType)
                     .subscribe(onSuccess: { translation in
-                        print(translation)
+                        isLoadingRelay.accept(false) // Hide indicator
+                        presentResultRelay.accept(translation)
                     }, onError: { error in
+                        isLoadingRelay.accept(false) // Hide indicator
                         print(error)
                     })
                     .disposed(by: self.disposeBag)
@@ -79,8 +87,10 @@ extension InputSentenceViewModel: ViewModelType {
             .emit(to: hideUsageTextViewRelay)
             .disposed(by: disposeBag)
 
-        return Output(clearTextSignal: input.tapClearButtonSignal.map { "" },
+        return Output(isLoading: isLoadingRelay.asSignal(),
+                      clearTextSignal: input.tapClearButtonSignal.map { "" },
                       outputTypeDriver: outputTypeRelay.asDriver(),
-                      hideUsageTextViewDriver: hideUsageTextViewRelay.asDriver())
+                      hideUsageTextViewDriver: hideUsageTextViewRelay.asDriver(),
+                      presentResult: presentResultRelay.asSignal())
     }
 }

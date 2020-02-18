@@ -8,8 +8,27 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import NVActivityIndicatorView
 
 class DisposableViewController: UIViewController {
 
     let disposeBag = DisposeBag()
+}
+
+extension DisposableViewController: NVActivityIndicatorViewable {
+
+}
+
+extension Reactive where Base: DisposableViewController {
+
+    var isLoading: Binder<Bool> {
+        return Binder(self.base) { target, value in
+            if value {
+                target.startAnimating(CGSize(width: 24, height: 24), type: .lineScalePulseOutRapid, color: nil, backgroundColor: .clear)
+            } else {
+                target.stopAnimating()
+            }
+        }
+    }
 }

@@ -77,6 +77,9 @@ extension InputSentenceViewController {
                                                  tapUsegeButtonSignal: usageButton.rx.tap.asSignal(onErrorSignalWith: .empty()))
         let output = viewModel.transform(input: input)
 
+        output.isLoading
+            .emit(to: rx.isLoading)
+            .disposed(by: disposeBag)
         output.clearTextSignal
             .emit(to: inputTextView.rx.text.orEmpty)
             .disposed(by: disposeBag)
@@ -85,6 +88,9 @@ extension InputSentenceViewController {
             .disposed(by: disposeBag)
         output.hideUsageTextViewDriver
             .drive(onNext: { [weak self] isHidden in self?.usageTextViewExpandAnimation(isHidden: isHidden) })
+            .disposed(by: disposeBag)
+        output.presentResult
+            .emit(onNext: { [weak self] translation in self?.presentResult(translation: translation) })
             .disposed(by: disposeBag)
     }
 }
@@ -97,5 +103,17 @@ extension InputSentenceViewController {
         UIView.animate(withDuration: 0.3) {
             self.usageTextView.isHidden = isHidden
         }
+    }
+}
+
+// MARK: - Transition
+
+extension InputSentenceViewController {
+
+    private func presentResult(translation: Translation) {
+        let vc = NavigationController(rootViewController: ResultViewController.instantiate())
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
 }
