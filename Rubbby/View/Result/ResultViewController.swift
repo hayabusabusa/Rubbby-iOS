@@ -50,6 +50,8 @@ extension ResultViewController {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.rowHeight = ResultCell.rowHeight
+        tableView.estimatedRowHeight = ResultHistoryCell.rowHeight
         tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
         tableView.register(ResultCell.nib, forCellReuseIdentifier: ResultCell.reuseIdentifier)
         tableView.register(ResultTitleCell.nib, forCellReuseIdentifier: ResultTitleCell.reuseIdentifier)
