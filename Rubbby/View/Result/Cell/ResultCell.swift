@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ResultCell: UITableViewCell {
 
@@ -37,8 +39,12 @@ class ResultCell: UITableViewCell {
 
     // MARK: Setup
 
-    func setupCell(outputText: String, originalText: String) {
+    func setupCell(outputText: String, originalText: String, tapCopyButtonRelay: PublishRelay<Void>) {
         outputTextView.text = outputText
         originalTextView.text = originalText
+        _ = copyButton.rx.tap
+            .takeUntil(rx.sentMessage(#selector(UITableViewCell.prepareForReuse)))
+            .concat(Observable.never())
+            .bind(to: tapCopyButtonRelay)
     }
 }

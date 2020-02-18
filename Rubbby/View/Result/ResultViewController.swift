@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class ResultViewController: DisposableViewController {
 
@@ -53,7 +54,6 @@ extension ResultViewController {
     }
 
     private func setupTableView() {
-        tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.rowHeight = ResultCell.rowHeight
         tableView.estimatedRowHeight = ResultHistoryCell.rowHeight
@@ -75,31 +75,25 @@ extension ResultViewController {
         output.dismiss
             .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
             .disposed(by: disposeBag)
-    }
-}
-
-// MARK: - TableView dataSource
-
-extension ResultViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch dataSource[indexPath.row] {
-        case .output:
-            guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier, for: indexPath) as? ResultCell else { return UITableViewCell() }
-            return cell
-        case .title:
-            guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: ResultTitleCell.reuseIdentifier, for: indexPath) as? ResultTitleCell else { return UITableViewCell() }
-            return cell
-        case .history:
-            guard let cell = tableView
-                .dequeueReusableCell(withIdentifier: ResultHistoryCell.reuseIdentifier, for: indexPath) as? ResultHistoryCell else { return UITableViewCell() }
-            return cell
-        }
+        output.dataSourceDriver
+            .drive(tableView.rx.items) { tableView, _, element in
+                switch element {
+                case .output(let translation):
+                    guard let cell = tableView
+                        .dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier) as? ResultCell else { return UITableViewCell() }
+                    cell.setupCell(outputText: translation.converted, originalText: "", tapCopyButtonRelay: output.tapCopyButtonRelay)
+                    return cell
+                case .title(let title):
+                    guard let cell = tableView
+                        .dequeueReusableCell(withIdentifier: ResultTitleCell.reuseIdentifier) as? ResultTitleCell else { return UITableViewCell() }
+                    cell.setupCell(title: title)
+                    return cell
+                case .history:
+                    guard let cell = tableView
+                        .dequeueReusableCell(withIdentifier: ResultHistoryCell.reuseIdentifier) as? ResultHistoryCell else { return UITableViewCell() }
+                    cell.setupCell(convertedText: "Converted", originalText: "Original", tapCopyButtonRelay: output.tapCopyButtonRelay)
+                    return cell
+                }
+            }.disposed(by: disposeBag)
     }
 }

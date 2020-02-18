@@ -38,6 +38,7 @@ extension ResultViewModel: ViewModelType {
 
     struct Output {
         let dataSourceDriver: Driver<[ResultCellType]>
+        let tapCopyButtonRelay: PublishRelay<Void>
         let dismiss: Signal<Void>
     }
 
@@ -45,8 +46,15 @@ extension ResultViewModel: ViewModelType {
 
     func transform(input: ResultViewModel.Input) -> ResultViewModel.Output {
         let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
+        let tapCopyButtonRelay: PublishRelay<Void> = .init()
+
+        dataSourceRelay.accept([.output(translation: translation)])
+
+        tapCopyButtonRelay.subscribe(onNext: { print("Tap") })
+            .disposed(by: disposeBag)
 
         return Output(dataSourceDriver: dataSourceRelay.asDriver(),
+                      tapCopyButtonRelay: tapCopyButtonRelay,
                       dismiss: input.tapBackButtonSignal)
     }
 }
