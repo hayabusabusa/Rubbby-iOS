@@ -20,6 +20,7 @@
 		71536DA723FC3DED004A330C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA623FC3DED004A330C /* RealmManager.swift */; };
 		71536DA923FC441E004A330C /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA823FC441E004A330C /* DatabaseRepository.swift */; };
 		71536DAC23FC48CB004A330C /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DAB23FC48CB004A330C /* ResultModel.swift */; };
+		71536DAE23FC4A1C004A330C /* HistoryEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */; };
 		A443840023FB6B5C00F1E1ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */; };
 		A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */; };
 		A443840823FB6E1900F1E1ED /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840623FB6E1900F1E1ED /* ResultCell.swift */; };
@@ -109,6 +110,7 @@
 		71536DA623FC3DED004A330C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		71536DA823FC441E004A330C /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		71536DAB23FC48CB004A330C /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntityTranslator.swift; sourceTree = "<group>"; };
 		A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		A443840623FB6E1900F1E1ED /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			children = (
 				A4F9D00823F63B22001D37E4 /* Translator.swift */,
 				A4F9D00C23F63B93001D37E4 /* TranslationEntityTranslator.swift */,
+				71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				A4F21F4223FA7F7B0032A2D0 /* NavigationController.swift in Sources */,
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
 				A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */,
+				71536DAE23FC4A1C004A330C /* HistoryEntityTranslator.swift in Sources */,
 				A4F9D02823F65232001D37E4 /* PrototypeViewController.swift in Sources */,
 				A443841523FB847100F1E1ED /* InputSentenceModel.swift in Sources */,
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
