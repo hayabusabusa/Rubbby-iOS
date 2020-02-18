@@ -15,6 +15,8 @@
 		71536D9923FAC912004A330C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9823FAC912004A330C /* TextView.swift */; };
 		71536D9D23FAEBAB004A330C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9C23FAEBAB004A330C /* ViewModelType.swift */; };
 		71536DA023FAEC1F004A330C /* InputSentenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9F23FAEC1F004A330C /* InputSentenceViewModel.swift */; };
+		71536DA223FC2659004A330C /* HistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA123FC2659004A330C /* HistoryEntity.swift */; };
+		71536DA423FC2B2F004A330C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA323FC2B2F004A330C /* History.swift */; };
 		A443840023FB6B5C00F1E1ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */; };
 		A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */; };
 		A443840823FB6E1900F1E1ED /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840623FB6E1900F1E1ED /* ResultCell.swift */; };
@@ -99,6 +101,8 @@
 		71536D9823FAC912004A330C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		71536D9C23FAEBAB004A330C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		71536D9F23FAEC1F004A330C /* InputSentenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSentenceViewModel.swift; sourceTree = "<group>"; };
+		71536DA123FC2659004A330C /* HistoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntity.swift; sourceTree = "<group>"; };
+		71536DA323FC2B2F004A330C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		A443840623FB6E1900F1E1ED /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 				A4F0976323F53A05008BBC33 /* TranslationEntity.swift */,
 				A4F0976523F53B3B008BBC33 /* TranslationType.swift */,
 				A4F9D00A23F63B5B001D37E4 /* Translation.swift */,
+				71536DA123FC2659004A330C /* HistoryEntity.swift */,
+				71536DA323FC2B2F004A330C /* History.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -648,6 +654,7 @@
 				A443840C23FB70E000F1E1ED /* ResultTitleCell.swift in Sources */,
 				71536DA023FAEC1F004A330C /* InputSentenceViewModel.swift in Sources */,
 				A4F21F3823FA7CEF0032A2D0 /* InputSentenceViewController.swift in Sources */,
+				71536DA423FC2B2F004A330C /* History.swift in Sources */,
 				71536D9923FAC912004A330C /* TextView.swift in Sources */,
 				A4F0976423F53A05008BBC33 /* TranslationEntity.swift in Sources */,
 				A4F0976623F53B3B008BBC33 /* TranslationType.swift in Sources */,
@@ -674,6 +681,7 @@
 				A443841523FB847100F1E1ED /* InputSentenceModel.swift in Sources */,
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
 				A4F21F4023FA7DE90032A2D0 /* Storyboard.swift in Sources */,
+				71536DA223FC2659004A330C /* HistoryEntity.swift in Sources */,
 				A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */,
 				A4F21F4623FA88810032A2D0 /* UIColor+Extension.swift in Sources */,
 			);
