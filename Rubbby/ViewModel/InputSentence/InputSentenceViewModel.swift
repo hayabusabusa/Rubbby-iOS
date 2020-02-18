@@ -14,11 +14,17 @@ final class InputSentenceViewModel {
 
     // MARK: Dependency
 
+    private let model: InputSentenceModel
+
     // MARK: Properties
 
     private let disposeBag = DisposeBag()
 
     // MARK: Initializer
+
+    init(model: InputSentenceModel = InputSentenceModelImpl()) {
+        self.model = model
+    }
 }
 
 extension InputSentenceViewModel: ViewModelType {
@@ -56,8 +62,16 @@ extension InputSentenceViewModel: ViewModelType {
         // NOTE: 変換ボタンが押された際にAPIへPOSTのリクエストを行う.
         input.tapTranslateButtonSignal
             .withLatestFrom(input.inputTextViewDriver)
-            .emit(onNext: { sentence in
-                print(sentence)
+            .emit(onNext: { [weak self] sentence in
+                guard let self = self else { return }
+                let outputType = outputTypeRelay.value == "ひらがな" ? TranslationType.hiragana : TranslationType.katakana
+                self.model.postSentence(appId: appID, sentence: sentence, outputType: outputType)
+                    .subscribe(onSuccess: { translation in
+                        print(translation)
+                    }, onError: { error in
+                        print(error)
+                    })
+                    .disposed(by: self.disposeBag)
             })
             .disposed(by: disposeBag)
         // NOTE: 使い方を表示するボタンがタップされた際に `TextView` を表示、非表示にする値を流す.
