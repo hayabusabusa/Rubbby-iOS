@@ -50,9 +50,6 @@ extension ResultViewModel: ViewModelType {
 
         dataSourceRelay.accept([.output(translation: translation)])
 
-        tapCopyButtonRelay.subscribe(onNext: { print("Tap") })
-            .disposed(by: disposeBag)
-
         return Output(dataSourceDriver: dataSourceRelay.asDriver(),
                       tapCopyButtonRelay: tapCopyButtonRelay,
                       dismiss: input.tapBackButtonSignal)
