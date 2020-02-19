@@ -9,11 +9,10 @@
 import Foundation
 
 struct HistoryEntityTranslator: Translator {
-    typealias Input = HistoryEntity
-    typealias Output = History
+    typealias Input = [HistoryEntity]
+    typealias Output = [History]
 
-    func translate(_ input: HistoryEntity) throws -> History {
-        return History(original: input.original,
-                       converted: input.converted)
+    func translate(_ input: [HistoryEntity]) throws -> [History] {
+        return input.map { History(original: $0.original, converted: $0.converted) }
     }
 }
