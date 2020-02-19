@@ -5,6 +5,18 @@
 ## アプリについて
 入力されたテキストをひらがな、もしくはカタカナに変換することができるアプリです。
 
+### 機能
+以下の機能をサポートしています。
+
+- 漢字の混じった文章からひらがな、カタカナの文章への変換
+- 変換履歴の保存
+- ダークモードに対応
+
+### プレビュー
+| 入力画面(Light) | 入力画面(Dark) | 結果画面(Light) | 結果画面(Dark) |
+| :------------: | :----------: | :------------: | :-----------: |
+| ![Simulator Screen Shot - iPhone 11 - 2020-02-19 at 18 24 26](https://user-images.githubusercontent.com/31949692/74820472-6b85c880-5345-11ea-858d-d64201438b3f.png) | ![Simulator Screen Shot - iPhone 11 - 2020-02-19 at 18 22 53](https://user-images.githubusercontent.com/31949692/74820501-7b9da800-5345-11ea-965f-20db12ac3cab.png) | ![Simulator Screen Shot - iPhone 11 - 2020-02-19 at 18 23 33](https://user-images.githubusercontent.com/31949692/74820589-a7b92900-5345-11ea-81a0-50fa3b610891.png) | ![Simulator Screen Shot - iPhone 11 - 2020-02-19 at 18 23 43](https://user-images.githubusercontent.com/31949692/74820623-b4d61800-5345-11ea-88c3-8c353a1c5bc0.png) |
+
 ## 事前準備
 ### アプリケーションIDについて
 本アプリではgoo様より公開されている [ひらがな化API](https://labs.goo.ne.jp/api/jp/hiragana-translation/) を利用しています。  
