@@ -43,6 +43,7 @@ extension InputSentenceViewModel: ViewModelType {
         let isLoading: Signal<Bool>
         let clearTextSignal: Signal<String>
         let outputTypeDriver: Driver<String>
+        let usageButtonTitleDriver: Driver<String>
         let hideUsageTextViewDriver: Driver<Bool>
         let presentResult: Signal<Translation>
     }
@@ -87,9 +88,13 @@ extension InputSentenceViewModel: ViewModelType {
             .emit(to: hideUsageTextViewRelay)
             .disposed(by: disposeBag)
 
+        let usageButtonTitleDriver = hideUsageTextViewRelay.map { $0 ? "表示する" : "閉じる" }
+            .asDriver(onErrorDriveWith: .empty())
+
         return Output(isLoading: isLoadingRelay.asSignal(),
                       clearTextSignal: input.tapClearButtonSignal.map { "" },
                       outputTypeDriver: outputTypeRelay.asDriver(),
+                      usageButtonTitleDriver: usageButtonTitleDriver,
                       hideUsageTextViewDriver: hideUsageTextViewRelay.asDriver(),
                       presentResult: presentResultRelay.asSignal())
     }

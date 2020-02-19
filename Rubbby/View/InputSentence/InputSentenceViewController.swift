@@ -86,6 +86,9 @@ extension InputSentenceViewController {
         output.outputTypeDriver
             .drive(outputTypeLabel.rx.text)
             .disposed(by: disposeBag)
+        output.usageButtonTitleDriver
+            .drive(usageButton.rx.title())
+            .disposed(by: disposeBag)
         output.hideUsageTextViewDriver
             .drive(onNext: { [weak self] isHidden in self?.usageTextViewExpandAnimation(isHidden: isHidden) })
             .disposed(by: disposeBag)
