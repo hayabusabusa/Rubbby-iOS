@@ -15,4 +15,7 @@ extension UIColor {
     class var navigation: UIColor {
         return UIColor(named: "Navigation")!
     }
+    class var containerBackground: UIColor {
+        return UIColor(named: "ContainerBackground")!
+    }
 }
