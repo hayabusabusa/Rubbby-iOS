@@ -52,7 +52,7 @@ extension ResultViewModel: ViewModelType {
         let tapCopyButtonRelay: PublishRelay<Void> = .init()
         let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
 
-        dataSourceRelay.accept([.output(translation: translation)])
+        dataSourceRelay.accept([.output(originalText: originalText, translation: translation)])
 
         let setPasteboardSignal = tapCopyButtonRelay
             .map { [weak self] in self?.translation.converted ?? "" }

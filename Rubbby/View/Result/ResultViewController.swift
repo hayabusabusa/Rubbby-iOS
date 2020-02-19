@@ -74,11 +74,11 @@ extension ResultViewController {
         output.dataSourceDriver
             .drive(tableView.rx.items) { tableView, _, element in
                 switch element {
-                case .output(let translation):
+                case let .output(originalText, translation):
                     guard let cell = tableView
                         .dequeueReusableCell(withIdentifier: ResultCell.reuseIdentifier) as? ResultCell else { return UITableViewCell() }
 
-                    cell.setupCell(outputText: translation.converted, originalText: "")
+                    cell.setupCell(outputText: translation.converted, originalText: originalText)
                     _ = cell.copyButton.rx.tap
                         .takeUntil(cell.rx.sentMessage(#selector(UITableViewCell.prepareForReuse)))
                         .concat(Observable.never())
