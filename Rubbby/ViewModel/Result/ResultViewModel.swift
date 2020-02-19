@@ -14,6 +14,10 @@ final class ResultViewModel {
 
     // MARK: Dependency
 
+    typealias Dependency = (originalText: String, translation: Translation)
+
+    private let model: ResultModel
+    private let originalText: String
     private let translation: Translation
 
     // MARK: Propreties
@@ -22,8 +26,10 @@ final class ResultViewModel {
 
     // MARK: Initializer
 
-    init(translation: Translation) {
-        self.translation = translation
+    init(dependency: Dependency, model: ResultModel = ResultModelImpl()) {
+        self.model = model
+        originalText = dependency.originalText
+        translation = dependency.translation
     }
 }
 
@@ -48,7 +54,17 @@ extension ResultViewModel: ViewModelType {
         let tapCopyButtonRelay: PublishRelay<Void> = .init()
         let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
 
-        dataSourceRelay.accept([.output(translation: translation)])
+        model.saveHistory(History(date: Date(), original: originalText, converted: translation.converted))
+            .andThen(model.getHistories())
+            .translate(HistoryTranslator(originalText: originalText, translation: translation))
+            .subscribe(onSuccess: { dataSource in
+                print(dataSource)
+                dataSourceRelay.accept(dataSource)
+            }, onError: { error in
+                // TODO: Show error
+                print(error)
+            })
+            .disposed(by: disposeBag)
 
         let setPasteboardSignal = tapCopyButtonRelay
             .map { [weak self] in self?.translation.converted ?? "" }

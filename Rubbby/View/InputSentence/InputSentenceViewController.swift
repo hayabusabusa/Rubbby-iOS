@@ -93,7 +93,7 @@ extension InputSentenceViewController {
             .drive(onNext: { [weak self] isHidden in self?.usageTextViewExpandAnimation(isHidden: isHidden) })
             .disposed(by: disposeBag)
         output.presentResult
-            .emit(onNext: { [weak self] translation in self?.presentResult(translation: translation) })
+            .emit(onNext: { [weak self] dependency in self?.presentResult(dependency: dependency) })
             .disposed(by: disposeBag)
     }
 }
@@ -114,8 +114,9 @@ extension InputSentenceViewController {
 
 extension InputSentenceViewController {
 
-    private func presentResult(translation: Translation) {
-        let vc = NavigationController(rootViewController: ResultViewController.configure(with: translation))
+    private func presentResult(dependency: ResultViewModel.Dependency) {
+        let vc = NavigationController(rootViewController: ResultViewController.configure(with: dependency.originalText,
+                                                                                         translation: dependency.translation))
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)

@@ -9,7 +9,7 @@
 import Foundation
 
 enum ResultCellType {
-    case output(translation: Translation)
+    case output(originalText: String, translation: Translation)
     case title(title: String)
-    case history(translation: Translation)
+    case history(history: History)
 }

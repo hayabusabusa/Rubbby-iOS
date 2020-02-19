@@ -45,7 +45,7 @@ extension InputSentenceViewModel: ViewModelType {
         let outputTypeDriver: Driver<String>
         let usageButtonTitleDriver: Driver<String>
         let hideUsageTextViewDriver: Driver<Bool>
-        let presentResult: Signal<Translation>
+        let presentResult: Signal<ResultViewModel.Dependency>
     }
 
     // MARK: Transform I/O
@@ -55,7 +55,7 @@ extension InputSentenceViewModel: ViewModelType {
         let inputTextRelay: BehaviorRelay<String> = .init(value: "")
         let outputTypeRelay: BehaviorRelay<String> = .init(value: "ひらがな")
         let hideUsageTextViewRelay: BehaviorRelay<Bool> = .init(value: true)
-        let presentResultRelay: PublishRelay<Translation> = .init()
+        let presentResultRelay: PublishRelay<ResultViewModel.Dependency> = .init()
 
         input.inputTextViewDriver
             .drive(inputTextRelay)
@@ -75,7 +75,8 @@ extension InputSentenceViewModel: ViewModelType {
                 self.model.postSentence(appId: appID, sentence: sentence, outputType: outputType)
                     .subscribe(onSuccess: { translation in
                         isLoadingRelay.accept(false) // Hide indicator
-                        presentResultRelay.accept(translation)
+                        presentResultRelay.accept(ResultViewModel.Dependency(originalText: inputTextRelay.value,
+                                                                             translation: translation))
                     }, onError: { error in
                         isLoadingRelay.accept(false) // Hide indicator
                         print(error)
