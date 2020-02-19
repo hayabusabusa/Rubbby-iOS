@@ -12,7 +12,8 @@ import RxSwift
 // MARK: - Interface
 
 protocol ResultModel {
-
+    func saveHistory(_ history: HistoryEntity) -> Completable
+    func getHistories() -> Single<[History]>
 }
 
 // MARK: - Implementation
@@ -30,5 +31,14 @@ struct ResultModelImpl: ResultModel {
     }
 
     // MARK: Realm
+
+    func saveHistory(_ history: HistoryEntity) -> Completable {
+        return repository.saveHistory(history)
+    }
+
+    func getHistories() -> Single<[History]> {
+        return repository.getHistories()
+            .translate(HistoryEntityTranslator())
+    }
 
 }
