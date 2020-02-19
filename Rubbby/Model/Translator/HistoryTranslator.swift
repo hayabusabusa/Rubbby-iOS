@@ -12,8 +12,8 @@ struct HistoryTranslator: Translator {
     typealias Input = [History]
     typealias Output = [ResultCellType]
 
-    private let originalText: String
-    private let translation: Translation
+    let originalText: String
+    let translation: Translation
 
     func translate(_ input: [History]) -> [ResultCellType] {
         var rows: [ResultCellType] = [ResultCellType]()

@@ -56,14 +56,15 @@ extension ResultViewModel: ViewModelType {
 
         model.saveHistory(History(original: originalText, converted: translation.converted))
             .andThen(model.getHistories())
-            .subscribe(onSuccess: { histories in
-                print(histories)
+            .translate(HistoryTranslator(originalText: originalText, translation: translation))
+            .subscribe(onSuccess: { dataSource in
+                print(dataSource)
+                dataSourceRelay.accept(dataSource)
             }, onError: { error in
+                // TODO: Show error
                 print(error)
             })
             .disposed(by: disposeBag)
-
-        dataSourceRelay.accept([.output(originalText: originalText, translation: translation)])
 
         let setPasteboardSignal = tapCopyButtonRelay
             .map { [weak self] in self?.translation.converted ?? "" }

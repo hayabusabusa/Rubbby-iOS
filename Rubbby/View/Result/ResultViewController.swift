@@ -89,13 +89,14 @@ extension ResultViewController {
                         .dequeueReusableCell(withIdentifier: ResultTitleCell.reuseIdentifier) as? ResultTitleCell else { return UITableViewCell() }
                     cell.setupCell(title: title)
                     return cell
-                case .history:
+                case .history(let history):
                     guard let cell = tableView
                         .dequeueReusableCell(withIdentifier: ResultHistoryCell.reuseIdentifier) as? ResultHistoryCell else { return UITableViewCell() }
-                    cell.setupCell(convertedText: "Converted", originalText: "Original")
+                    cell.setupCell(convertedText: history.converted, originalText: history.original)
                     return cell
                 }
-            }.disposed(by: disposeBag)
+            }
+        .disposed(by: disposeBag)
     }
 }
 
