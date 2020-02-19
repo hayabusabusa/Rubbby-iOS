@@ -85,4 +85,10 @@ class TextView: UITextView {
             self?.placeholderLabel.isHidden = !text.isEmpty
         }
     }
+
+    // MARK: Public
+
+    func setHidePlaceholder(isHidden: Bool) {
+        placeholderLabel.isHidden = isHidden
+    }
 }
