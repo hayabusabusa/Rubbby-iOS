@@ -23,9 +23,10 @@ final class ResultViewController: DisposableViewController {
 
     // MARK: Lifecycle
 
-    static func configure(with translation: Translation) -> ResultViewController {
+    static func configure(with originalText: String, translation: Translation) -> ResultViewController {
         let vc = Storyboard.ResultViewController.instantiate(ResultViewController.self)
-        vc.viewModel = ResultViewModel(translation: translation)
+        vc.viewModel = ResultViewModel(dependency: ResultViewModel.Dependency(originalText: originalText,
+                                                                              translation: translation))
         return vc
     }
 

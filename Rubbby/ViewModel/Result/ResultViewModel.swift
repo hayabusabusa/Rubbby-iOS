@@ -14,6 +14,9 @@ final class ResultViewModel {
 
     // MARK: Dependency
 
+    typealias Dependency = (originalText: String, translation: Translation)
+
+    private let originalText: String
     private let translation: Translation
 
     // MARK: Propreties
@@ -22,8 +25,9 @@ final class ResultViewModel {
 
     // MARK: Initializer
 
-    init(translation: Translation) {
-        self.translation = translation
+    init(dependency: Dependency) {
+        originalText = dependency.originalText
+        translation = dependency.translation
     }
 }
 
