@@ -1,0 +1,14 @@
+# Rx
+## RxSwift(https://github.com/ReactiveX/RxSwift)
+github "ReactiveX/RxSwift" ~> 5.0
+
+# Network
+## Moya(https://github.com/Moya/Moya)
+github "Moya/Moya" "14.0.0-beta.6"
+
+# UI
+## NVActivityIndicatorView(https://github.com/ninjaprox/NVActivityIndicatorView)
+github "ninjaprox/NVActivityIndicatorView"
+
+## IQKeyboardManager(https://github.com/hackiftekhar/IQKeyboardManager)
+github "hackiftekhar/IQKeyboardManager"
