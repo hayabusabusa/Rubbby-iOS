@@ -8,6 +8,7 @@
 
 import UIKit
 import RxCocoa
+import NotificationBanner
 
 final class InputSentenceViewController: DisposableViewController {
 
@@ -80,6 +81,9 @@ extension InputSentenceViewController {
         output.isLoading
             .emit(to: rx.isLoading)
             .disposed(by: disposeBag)
+        output.errorMessageDriver
+            .emit(onNext: { [weak self] message in self?.showError(message: message) })
+            .disposed(by: disposeBag)
         output.clearTextSignal
             .emit(to: inputTextView.rx.text.orEmpty)
             .disposed(by: disposeBag)
@@ -95,6 +99,16 @@ extension InputSentenceViewController {
         output.presentResult
             .emit(onNext: { [weak self] dependency in self?.presentResult(dependency: dependency) })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Error message
+
+extension InputSentenceViewController {
+
+    private func showError(message: String) {
+        let banner = GrowingNotificationBanner(title: nil, subtitle: message, style: .danger)
+        banner.show()
     }
 }
 
