@@ -54,6 +54,7 @@ extension ResultViewModel: ViewModelType {
     func transform(input: ResultViewModel.Input) -> ResultViewModel.Output {
         let notificationBannerRelay: PublishRelay<BannerContent> = .init()
         let tapCopyButtonRelay: PublishRelay<Void> = .init()
+        let setPasteboardRelay: PublishRelay<String> = .init()
         let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
 
         model.saveHistory(History(date: Date(), original: originalText, converted: translation.converted))
@@ -66,13 +67,18 @@ extension ResultViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
 
-        let setPasteboardSignal = tapCopyButtonRelay
-            .map { [weak self] in self?.translation.converted ?? "" }
-            .asSignal(onErrorSignalWith: .empty())
+        // NOTE: コピーのボタンタップ時にはメッセージとUIPasteboardへの値追加を行う.
+        tapCopyButtonRelay.asSignal()
+            .emit(onNext: { [weak self] in
+                setPasteboardRelay.accept(self?.translation.converted ?? "")
+                notificationBannerRelay.accept(BannerContent(title: nil, message: "クリップボードにコピーしました。", style: .success))
+            })
+            .disposed(by: disposeBag)
+
         return Output(dismiss: input.tapBackButtonSignal,
                       notificationBannerSignal: notificationBannerRelay.asSignal(),
                       tapCopyButtonRelay: tapCopyButtonRelay,
-                      setPasteboardSignal: setPasteboardSignal,
+                      setPasteboardSignal: setPasteboardRelay.asSignal(),
                       dataSourceDriver: dataSourceRelay.asDriver())
     }
 }
