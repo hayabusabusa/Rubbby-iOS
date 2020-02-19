@@ -17,7 +17,7 @@ final class InputSentenceViewController: DisposableViewController {
     @IBOutlet private weak var typeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var outputTypeLabel: UILabel!
     @IBOutlet private weak var clearButton: UIButton!
-    @IBOutlet private weak var inputTextView: UITextView!
+    @IBOutlet private weak var inputTextView: TextView!
     @IBOutlet private weak var translateButton: UIButton!
     @IBOutlet private weak var usageButton: UIButton!
     @IBOutlet private weak var usageTextView: UITextView!
@@ -85,7 +85,10 @@ extension InputSentenceViewController {
             .emit(onNext: { [weak self] content in self?.showBanner(content: content) })
             .disposed(by: disposeBag)
         output.clearTextSignal
-            .emit(to: inputTextView.rx.text.orEmpty)
+            .emit(onNext: { [weak self] emptyText in
+                self?.inputTextView.text = emptyText
+                self?.inputTextView.setHidePlaceholder(isHidden: false)
+            })
             .disposed(by: disposeBag)
         output.outputTypeDriver
             .drive(outputTypeLabel.rx.text)
