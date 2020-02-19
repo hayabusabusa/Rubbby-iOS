@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import NotificationBanner
 
 final class ResultViewController: DisposableViewController {
 
@@ -68,6 +69,9 @@ extension ResultViewController {
         output.dismiss
             .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
             .disposed(by: disposeBag)
+        output.notificationBannerSignal
+            .emit(onNext: { [weak self] content in self?.showBanner(content: content) })
+            .disposed(by: disposeBag)
         output.setPasteboardSignal
             .emit(onNext: { [weak self] text in self?.setTextOnPasteboard(text: text) })
             .disposed(by: disposeBag)
@@ -100,11 +104,21 @@ extension ResultViewController {
     }
 }
 
-// MARK: Pasteboard
+// MARK: - NotificationBanner
 
 extension ResultViewController {
 
-    func setTextOnPasteboard(text: String) {
+    private func showBanner(content: BannerContent) {
+        let banner = GrowingNotificationBanner(title: content.title, subtitle: content.message, style: content.style)
+        banner.show()
+    }
+}
+
+// MARK: - Pasteboard
+
+extension ResultViewController {
+
+    private func setTextOnPasteboard(text: String) {
         UIPasteboard.general.string = text
     }
 }

@@ -41,6 +41,7 @@ extension InputSentenceViewModel: ViewModelType {
 
     struct Output {
         let isLoading: Signal<Bool>
+        let notificationBannerSignal: Signal<BannerContent>
         let clearTextSignal: Signal<String>
         let outputTypeDriver: Driver<String>
         let usageButtonTitleDriver: Driver<String>
@@ -52,6 +53,7 @@ extension InputSentenceViewModel: ViewModelType {
 
     func transform(input: InputSentenceViewModel.Input) -> InputSentenceViewModel.Output {
         let isLoadingRelay: PublishRelay<Bool> = .init()
+        let notificationBannerRelay: PublishRelay<BannerContent> = .init()
         let inputTextRelay: BehaviorRelay<String> = .init(value: "")
         let outputTypeRelay: BehaviorRelay<String> = .init(value: "ひらがな")
         let hideUsageTextViewRelay: BehaviorRelay<Bool> = .init(value: true)
@@ -77,9 +79,11 @@ extension InputSentenceViewModel: ViewModelType {
                         isLoadingRelay.accept(false) // Hide indicator
                         presentResultRelay.accept(ResultViewModel.Dependency(originalText: inputTextRelay.value,
                                                                              translation: translation))
-                    }, onError: { error in
+                    }, onError: { _ in
                         isLoadingRelay.accept(false) // Hide indicator
-                        print(error)
+                        notificationBannerRelay.accept(BannerContent(title: "エラー",
+                                                                     message: "通信状況や入力したテキストを確認してください。",
+                                                                     style: .danger)) // Show banner with error
                     })
                     .disposed(by: self.disposeBag)
             })
@@ -93,6 +97,7 @@ extension InputSentenceViewModel: ViewModelType {
             .asDriver(onErrorDriveWith: .empty())
 
         return Output(isLoading: isLoadingRelay.asSignal(),
+                      notificationBannerSignal: notificationBannerRelay.asSignal(),
                       clearTextSignal: input.tapClearButtonSignal.map { "" },
                       outputTypeDriver: outputTypeRelay.asDriver(),
                       usageButtonTitleDriver: usageButtonTitleDriver,

@@ -43,6 +43,7 @@ extension ResultViewModel: ViewModelType {
 
     struct Output {
         let dismiss: Signal<Void>
+        let notificationBannerSignal: Signal<BannerContent>
         let tapCopyButtonRelay: PublishRelay<Void>
         let setPasteboardSignal: Signal<String>
         let dataSourceDriver: Driver<[ResultCellType]>
@@ -51,27 +52,33 @@ extension ResultViewModel: ViewModelType {
     // MARK: Transform I/O
 
     func transform(input: ResultViewModel.Input) -> ResultViewModel.Output {
+        let notificationBannerRelay: PublishRelay<BannerContent> = .init()
         let tapCopyButtonRelay: PublishRelay<Void> = .init()
+        let setPasteboardRelay: PublishRelay<String> = .init()
         let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
 
         model.saveHistory(History(date: Date(), original: originalText, converted: translation.converted))
             .andThen(model.getHistories())
             .translate(HistoryTranslator(originalText: originalText, translation: translation))
             .subscribe(onSuccess: { dataSource in
-                print(dataSource)
                 dataSourceRelay.accept(dataSource)
-            }, onError: { error in
-                // TODO: Show error
-                print(error)
+            }, onError: { _ in
+                notificationBannerRelay.accept(BannerContent(title: "エラー", message: "履歴の保存、読み込みに失敗しました。", style: .danger))
             })
             .disposed(by: disposeBag)
 
-        let setPasteboardSignal = tapCopyButtonRelay
-            .map { [weak self] in self?.translation.converted ?? "" }
-            .asSignal(onErrorSignalWith: .empty())
+        // NOTE: コピーのボタンタップ時にはメッセージとUIPasteboardへの値追加を行う.
+        tapCopyButtonRelay.asSignal()
+            .emit(onNext: { [weak self] in
+                setPasteboardRelay.accept(self?.translation.converted ?? "")
+                notificationBannerRelay.accept(BannerContent(title: nil, message: "クリップボードにコピーしました。", style: .success))
+            })
+            .disposed(by: disposeBag)
+
         return Output(dismiss: input.tapBackButtonSignal,
+                      notificationBannerSignal: notificationBannerRelay.asSignal(),
                       tapCopyButtonRelay: tapCopyButtonRelay,
-                      setPasteboardSignal: setPasteboardSignal,
+                      setPasteboardSignal: setPasteboardRelay.asSignal(),
                       dataSourceDriver: dataSourceRelay.asDriver())
     }
 }
