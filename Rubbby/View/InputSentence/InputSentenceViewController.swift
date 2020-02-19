@@ -81,8 +81,8 @@ extension InputSentenceViewController {
         output.isLoading
             .emit(to: rx.isLoading)
             .disposed(by: disposeBag)
-        output.errorMessageDriver
-            .emit(onNext: { [weak self] message in self?.showError(message: message) })
+        output.notificationBannerSignal
+            .emit(onNext: { [weak self] content in self?.showBanner(content: content) })
             .disposed(by: disposeBag)
         output.clearTextSignal
             .emit(to: inputTextView.rx.text.orEmpty)
@@ -106,8 +106,8 @@ extension InputSentenceViewController {
 
 extension InputSentenceViewController {
 
-    private func showError(message: String) {
-        let banner = GrowingNotificationBanner(title: nil, subtitle: message, style: .danger)
+    private func showBanner(content: BannerContent) {
+        let banner = GrowingNotificationBanner(title: content.title, subtitle: content.message, style: content.style)
         banner.show()
     }
 }
