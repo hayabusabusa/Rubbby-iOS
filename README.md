@@ -35,6 +35,7 @@ carthage bootstrap --platform iOS
 - [Moya](https://github.com/Moya/Moya)
 - [Realm](https://github.com/realm/realm-cocoa)
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
+- [NotificationBanner](https://github.com/Daltron/NotificationBanner)
 - [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
 
 ## 設計
