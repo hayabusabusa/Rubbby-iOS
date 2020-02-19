@@ -12,7 +12,7 @@ import RxSwift
 // MARK: - Interface
 
 protocol DatabaseRepository {
-    func saveHistory(_ history: HistoryEntity) -> Completable
+    func saveHistory(_ history: History) -> Completable
     func getHistories() -> Single<[HistoryEntity]>
 }
 
@@ -32,8 +32,12 @@ struct DatabaseRepositoryImpl: DatabaseRepository {
 
     // MARK: Realm
 
-    func saveHistory(_ history: HistoryEntity) -> Completable {
-        return realmManager.save(history)
+    func saveHistory(_ history: History) -> Completable {
+        // NOTE: Create entity.
+        let historyEntity = HistoryEntity()
+        historyEntity.converted = history.converted
+        historyEntity.original = history.original
+        return realmManager.save(historyEntity)
     }
 
     func getHistories() -> Single<[HistoryEntity]> {
