@@ -16,6 +16,7 @@ final class ResultViewModel {
 
     typealias Dependency = (originalText: String, translation: Translation)
 
+    private let model: ResultModel
     private let originalText: String
     private let translation: Translation
 
@@ -25,7 +26,8 @@ final class ResultViewModel {
 
     // MARK: Initializer
 
-    init(dependency: Dependency) {
+    init(dependency: Dependency, model: ResultModel = ResultModelImpl()) {
+        self.model = model
         originalText = dependency.originalText
         translation = dependency.translation
     }
@@ -51,6 +53,15 @@ extension ResultViewModel: ViewModelType {
     func transform(input: ResultViewModel.Input) -> ResultViewModel.Output {
         let tapCopyButtonRelay: PublishRelay<Void> = .init()
         let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
+
+        model.saveHistory(History(original: originalText, converted: translation.converted))
+            .andThen(model.getHistories())
+            .subscribe(onSuccess: { histories in
+                print(histories)
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
 
         dataSourceRelay.accept([.output(originalText: originalText, translation: translation)])
 
