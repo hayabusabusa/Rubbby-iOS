@@ -12,4 +12,7 @@ extension UIColor {
     class var primary: UIColor {
         return UIColor(named: "Primary")!
     }
+    class var navigation: UIColor {
+        return UIColor(named: "Navigation")!
+    }
 }
