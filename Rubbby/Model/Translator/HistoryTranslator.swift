@@ -16,6 +16,7 @@ struct HistoryTranslator: Translator {
     let translation: Translation
 
     func translate(_ input: [History]) -> [ResultCellType] {
+        let sortedInput = input.sorted(by: { $1.date < $0.date })
         var rows: [ResultCellType] = [ResultCellType]()
 
         // NOTE: Append output
@@ -24,7 +25,7 @@ struct HistoryTranslator: Translator {
         // NOTE: Append histories
         if !input.isEmpty {
             rows.append(.title(title: "変換履歴"))
-            rows.append(contentsOf: input.map { ResultCellType.history(history: $0) })
+            rows.append(contentsOf: sortedInput.map { ResultCellType.history(history: $0) })
         }
 
         return rows

@@ -13,6 +13,6 @@ struct HistoryEntityTranslator: Translator {
     typealias Output = [History]
 
     func translate(_ input: [HistoryEntity]) throws -> [History] {
-        return input.map { History(original: $0.original, converted: $0.converted) }
+        return input.map { History(date: $0.date, original: $0.original, converted: $0.converted) }
     }
 }

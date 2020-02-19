@@ -54,7 +54,7 @@ extension ResultViewModel: ViewModelType {
         let tapCopyButtonRelay: PublishRelay<Void> = .init()
         let dataSourceRelay: BehaviorRelay<[ResultCellType]> = .init(value: [])
 
-        model.saveHistory(History(original: originalText, converted: translation.converted))
+        model.saveHistory(History(date: Date(), original: originalText, converted: translation.converted))
             .andThen(model.getHistories())
             .translate(HistoryTranslator(originalText: originalText, translation: translation))
             .subscribe(onSuccess: { dataSource in

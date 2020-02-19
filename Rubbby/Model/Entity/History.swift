@@ -9,6 +9,7 @@
 import Foundation
 
 struct History {
+    let date: Date
     let original: String
     let converted: String
 }

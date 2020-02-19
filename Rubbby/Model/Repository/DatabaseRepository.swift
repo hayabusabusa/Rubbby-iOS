@@ -35,6 +35,7 @@ struct DatabaseRepositoryImpl: DatabaseRepository {
     func saveHistory(_ history: History) -> Completable {
         // NOTE: Create entity.
         let historyEntity = HistoryEntity()
+        historyEntity.date = history.date
         historyEntity.converted = history.converted
         historyEntity.original = history.original
         return realmManager.save(historyEntity)
