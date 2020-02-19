@@ -24,6 +24,9 @@
 		71536DB123FC4E17004A330C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71536DAF23FC4E16004A330C /* Realm.framework */; };
 		71536DB323FC4E17004A330C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71536DB023FC4E16004A330C /* RealmSwift.framework */; };
 		71CCF3DA23FCEAA900F13DC1 /* HistoryTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CCF3D923FCEAA900F13DC1 /* HistoryTranslator.swift */; };
+		71CCF3DE23FD05EB00F13DC1 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */; };
+		71CCF3E023FD05EB00F13DC1 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */; };
+		71CCF3E223FD05EB00F13DC1 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */; };
 		A443840023FB6B5C00F1E1ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */; };
 		A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */; };
 		A443840823FB6E1900F1E1ED /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840623FB6E1900F1E1ED /* ResultCell.swift */; };
@@ -117,6 +120,9 @@
 		71536DAF23FC4E16004A330C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		71536DB023FC4E16004A330C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		71CCF3D923FCEAA900F13DC1 /* HistoryTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTranslator.swift; sourceTree = "<group>"; };
+		71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationBanner.framework; path = Carthage/Build/iOS/NotificationBanner.framework; sourceTree = "<group>"; };
+		71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = "<group>"; };
 		A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		A443840623FB6E1900F1E1ED /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -181,11 +187,14 @@
 				A4F0975723F50FDF008BBC33 /* Moya.framework in Frameworks */,
 				A4F0974D23F50FDF008BBC33 /* RxMoya.framework in Frameworks */,
 				A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */,
+				71CCF3E223FD05EB00F13DC1 /* MarqueeLabel.framework in Frameworks */,
+				71CCF3E023FD05EB00F13DC1 /* NotificationBanner.framework in Frameworks */,
 				A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */,
 				71536DB323FC4E17004A330C /* RealmSwift.framework in Frameworks */,
 				A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */,
 				A4F0975E23F5367C008BBC33 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				A4F0974B23F50FDF008BBC33 /* RxRelay.framework in Frameworks */,
+				71CCF3DE23FD05EB00F13DC1 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +325,9 @@
 		A4F0974223F50FDF008BBC33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */,
+				71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */,
+				71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */,
 				71536DAF23FC4E16004A330C /* Realm.framework */,
 				71536DB023FC4E16004A330C /* RealmSwift.framework */,
 				A4F9D01823F642FC001D37E4 /* RxBlocking.framework */,
@@ -649,6 +661,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NotificationBanner.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (

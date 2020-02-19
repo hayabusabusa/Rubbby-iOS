@@ -14,5 +14,8 @@ github "realm/realm-cocoa"
 ## NVActivityIndicatorView(https://github.com/ninjaprox/NVActivityIndicatorView)
 github "ninjaprox/NVActivityIndicatorView"
 
+## NotificationBanner(https://github.com/Daltron/NotificationBanner)
+github "Daltron/NotificationBanner" "master"
+
 ## IQKeyboardManager(https://github.com/hackiftekhar/IQKeyboardManager)
 github "hackiftekhar/IQKeyboardManager"
