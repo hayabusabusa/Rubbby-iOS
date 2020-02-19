@@ -104,6 +104,7 @@ extension InputSentenceViewController {
 
     private func usageTextViewExpandAnimation(isHidden: Bool) {
         UIView.animate(withDuration: 0.3) {
+            self.usageTextView.alpha = isHidden ? 0 : 1
             self.usageTextView.isHidden = isHidden
         }
     }
