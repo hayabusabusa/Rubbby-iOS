@@ -27,6 +27,7 @@
 		71CCF3DE23FD05EB00F13DC1 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */; };
 		71CCF3E023FD05EB00F13DC1 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */; };
 		71CCF3E223FD05EB00F13DC1 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */; };
+		71CCF3E823FD0A8F00F13DC1 /* BannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CCF3E723FD0A8F00F13DC1 /* BannerContent.swift */; };
 		A443840023FB6B5C00F1E1ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */; };
 		A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */; };
 		A443840823FB6E1900F1E1ED /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840623FB6E1900F1E1ED /* ResultCell.swift */; };
@@ -123,6 +124,7 @@
 		71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationBanner.framework; path = Carthage/Build/iOS/NotificationBanner.framework; sourceTree = "<group>"; };
 		71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = "<group>"; };
+		71CCF3E723FD0A8F00F13DC1 /* BannerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerContent.swift; sourceTree = "<group>"; };
 		A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		A443840623FB6E1900F1E1ED /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				A4F21F3423FA7B130032A2D0 /* ContainerView.swift */,
 				71536D9623FAC279004A330C /* Button.swift */,
 				71536D9823FAC912004A330C /* TextView.swift */,
+				71CCF3E723FD0A8F00F13DC1 /* BannerContent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 			files = (
 				A443840C23FB70E000F1E1ED /* ResultTitleCell.swift in Sources */,
 				71536DA023FAEC1F004A330C /* InputSentenceViewModel.swift in Sources */,
+				71CCF3E823FD0A8F00F13DC1 /* BannerContent.swift in Sources */,
 				A4F21F3823FA7CEF0032A2D0 /* InputSentenceViewController.swift in Sources */,
 				71536DA423FC2B2F004A330C /* History.swift in Sources */,
 				71536D9923FAC912004A330C /* TextView.swift in Sources */,
