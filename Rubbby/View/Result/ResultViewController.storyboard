@@ -47,7 +47,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="Navigation"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Xea-d8-VB5" secondAttribute="trailing" id="D5t-6z-csn"/>
                                     <constraint firstItem="UdH-FW-GUx" firstAttribute="leading" secondItem="GYr-q7-gbh" secondAttribute="leading" constant="24" id="YaY-em-hDI"/>
@@ -58,6 +58,10 @@
                                     <constraint firstAttribute="bottom" secondItem="UdH-FW-GUx" secondAttribute="bottom" constant="8" id="x6g-4e-Y6W"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtS-c9-1oY" userLabel="Layout Safearea">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" name="Navigation"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -67,7 +71,11 @@
                             <constraint firstItem="fhf-Ul-7eW" firstAttribute="bottom" secondItem="GYr-q7-gbh" secondAttribute="bottom" id="MJ4-rs-eHb"/>
                             <constraint firstItem="izm-Ss-A9p" firstAttribute="leading" secondItem="fhf-Ul-7eW" secondAttribute="leading" id="QKI-c3-L3F"/>
                             <constraint firstItem="GYr-q7-gbh" firstAttribute="trailing" secondItem="fhf-Ul-7eW" secondAttribute="trailing" id="QhE-rq-dMJ"/>
+                            <constraint firstAttribute="bottom" secondItem="LtS-c9-1oY" secondAttribute="bottom" id="bUQ-A5-UoU"/>
+                            <constraint firstItem="LtS-c9-1oY" firstAttribute="trailing" secondItem="fhf-Ul-7eW" secondAttribute="trailing" id="gbJ-DZ-eov"/>
+                            <constraint firstItem="LtS-c9-1oY" firstAttribute="top" secondItem="fhf-Ul-7eW" secondAttribute="bottom" id="pmX-Zf-ekE"/>
                             <constraint firstItem="GYr-q7-gbh" firstAttribute="leading" secondItem="fhf-Ul-7eW" secondAttribute="leading" id="uf7-Gb-0cm"/>
+                            <constraint firstItem="LtS-c9-1oY" firstAttribute="leading" secondItem="fhf-Ul-7eW" secondAttribute="leading" id="woV-7d-yQk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fhf-Ul-7eW"/>
                     </view>
@@ -82,6 +90,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Navigation">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary">
             <color red="0.61599999666213989" green="0.043000001460313797" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
