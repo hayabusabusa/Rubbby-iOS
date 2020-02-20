@@ -15,6 +15,19 @@
 		71536D9923FAC912004A330C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9823FAC912004A330C /* TextView.swift */; };
 		71536D9D23FAEBAB004A330C /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9C23FAEBAB004A330C /* ViewModelType.swift */; };
 		71536DA023FAEC1F004A330C /* InputSentenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D9F23FAEC1F004A330C /* InputSentenceViewModel.swift */; };
+		71536DA223FC2659004A330C /* HistoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA123FC2659004A330C /* HistoryEntity.swift */; };
+		71536DA423FC2B2F004A330C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA323FC2B2F004A330C /* History.swift */; };
+		71536DA723FC3DED004A330C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA623FC3DED004A330C /* RealmManager.swift */; };
+		71536DA923FC441E004A330C /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DA823FC441E004A330C /* DatabaseRepository.swift */; };
+		71536DAC23FC48CB004A330C /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DAB23FC48CB004A330C /* ResultModel.swift */; };
+		71536DAE23FC4A1C004A330C /* HistoryEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */; };
+		71536DB123FC4E17004A330C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71536DAF23FC4E16004A330C /* Realm.framework */; };
+		71536DB323FC4E17004A330C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71536DB023FC4E16004A330C /* RealmSwift.framework */; };
+		71CCF3DA23FCEAA900F13DC1 /* HistoryTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CCF3D923FCEAA900F13DC1 /* HistoryTranslator.swift */; };
+		71CCF3DE23FD05EB00F13DC1 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */; };
+		71CCF3E023FD05EB00F13DC1 /* NotificationBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */; };
+		71CCF3E223FD05EB00F13DC1 /* MarqueeLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */; };
+		71CCF3E823FD0A8F00F13DC1 /* BannerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CCF3E723FD0A8F00F13DC1 /* BannerContent.swift */; };
 		A443840023FB6B5C00F1E1ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */; };
 		A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */; };
 		A443840823FB6E1900F1E1ED /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A443840623FB6E1900F1E1ED /* ResultCell.swift */; };
@@ -60,9 +73,6 @@
 		A4F9D01B23F64316001D37E4 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01823F642FC001D37E4 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4F9D01C23F64316001D37E4 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4F9D01723F642FC001D37E4 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4F9D01F23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */; };
-		A4F9D02823F65232001D37E4 /* PrototypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D02723F65232001D37E4 /* PrototypeViewController.swift */; };
-		A4F9D02A23F65255001D37E4 /* PrototypeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F9D02923F65255001D37E4 /* PrototypeViewController.storyboard */; };
-		A4F9D02E23F6548F001D37E4 /* PrototypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D02D23F6548F001D37E4 /* PrototypeViewModel.swift */; };
 		A4F9D03223F656FF001D37E4 /* PrototypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9D03123F656FF001D37E4 /* PrototypeModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +109,19 @@
 		71536D9823FAC912004A330C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		71536D9C23FAEBAB004A330C /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		71536D9F23FAEC1F004A330C /* InputSentenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSentenceViewModel.swift; sourceTree = "<group>"; };
+		71536DA123FC2659004A330C /* HistoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntity.swift; sourceTree = "<group>"; };
+		71536DA323FC2B2F004A330C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		71536DA623FC3DED004A330C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		71536DA823FC441E004A330C /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
+		71536DAB23FC48CB004A330C /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntityTranslator.swift; sourceTree = "<group>"; };
+		71536DAF23FC4E16004A330C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		71536DB023FC4E16004A330C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		71CCF3D923FCEAA900F13DC1 /* HistoryTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTranslator.swift; sourceTree = "<group>"; };
+		71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationBanner.framework; path = Carthage/Build/iOS/NotificationBanner.framework; sourceTree = "<group>"; };
+		71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = Carthage/Build/iOS/MarqueeLabel.framework; sourceTree = "<group>"; };
+		71CCF3E723FD0A8F00F13DC1 /* BannerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerContent.swift; sourceTree = "<group>"; };
 		A44383FF23FB6B5C00F1E1ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		A443840123FB6B7B00F1E1ED /* ResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultViewController.storyboard; sourceTree = "<group>"; };
 		A443840623FB6E1900F1E1ED /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -147,9 +170,6 @@
 		A4F9D01723F642FC001D37E4 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		A4F9D01823F642FC001D37E4 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		A4F9D01E23F643AD001D37E4 /* TestHiraganaTranslationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHiraganaTranslationAPIService.swift; sourceTree = "<group>"; };
-		A4F9D02723F65232001D37E4 /* PrototypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewController.swift; sourceTree = "<group>"; };
-		A4F9D02923F65255001D37E4 /* PrototypeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrototypeViewController.storyboard; sourceTree = "<group>"; };
-		A4F9D02D23F6548F001D37E4 /* PrototypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewModel.swift; sourceTree = "<group>"; };
 		A4F9D03123F656FF001D37E4 /* PrototypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,14 +178,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71536DB123FC4E17004A330C /* Realm.framework in Frameworks */,
 				A4F0975123F50FDF008BBC33 /* RxCocoa.framework in Frameworks */,
 				A4F0975723F50FDF008BBC33 /* Moya.framework in Frameworks */,
 				A4F0974D23F50FDF008BBC33 /* RxMoya.framework in Frameworks */,
 				A4F0975523F50FDF008BBC33 /* NVActivityIndicatorView.framework in Frameworks */,
+				71CCF3E223FD05EB00F13DC1 /* MarqueeLabel.framework in Frameworks */,
+				71CCF3E023FD05EB00F13DC1 /* NotificationBanner.framework in Frameworks */,
 				A4F0975923F50FDF008BBC33 /* RxSwift.framework in Frameworks */,
+				71536DB323FC4E17004A330C /* RealmSwift.framework in Frameworks */,
 				A4F0974F23F50FDF008BBC33 /* Alamofire.framework in Frameworks */,
 				A4F0975E23F5367C008BBC33 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				A4F0974B23F50FDF008BBC33 /* RxRelay.framework in Frameworks */,
+				71CCF3DE23FD05EB00F13DC1 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +230,14 @@
 				71536D9F23FAEC1F004A330C /* InputSentenceViewModel.swift */,
 			);
 			path = InputSentence;
+			sourceTree = "<group>";
+		};
+		71536DA523FC3DD5004A330C /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				71536DA623FC3DED004A330C /* RealmManager.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		A44383FE23FB6B4C00F1E1ED /* Result */ = {
@@ -288,6 +321,11 @@
 		A4F0974223F50FDF008BBC33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71CCF3DD23FD05EB00F13DC1 /* MarqueeLabel.framework */,
+				71CCF3DC23FD05EB00F13DC1 /* NotificationBanner.framework */,
+				71CCF3DB23FD05EB00F13DC1 /* SnapKit.framework */,
+				71536DAF23FC4E16004A330C /* Realm.framework */,
+				71536DB023FC4E16004A330C /* RealmSwift.framework */,
 				A4F9D01823F642FC001D37E4 /* RxBlocking.framework */,
 				A4F9D01723F642FC001D37E4 /* RxTest.framework */,
 				A4F0975D23F5367C008BBC33 /* IQKeyboardManagerSwift.framework */,
@@ -308,10 +346,12 @@
 			children = (
 				A4F9D00723F63B14001D37E4 /* Translator */,
 				A4F9D00323F6375E001D37E4 /* Repository */,
+				71536DA523FC3DD5004A330C /* DataBase */,
 				71536D7D23F57C0F004A330C /* Network */,
 				A4F0976223F538E3008BBC33 /* Entity */,
 				A4F9D03123F656FF001D37E4 /* PrototypeModel.swift */,
 				A443841423FB847100F1E1ED /* InputSentenceModel.swift */,
+				71536DAB23FC48CB004A330C /* ResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +362,8 @@
 				A4F0976323F53A05008BBC33 /* TranslationEntity.swift */,
 				A4F0976523F53B3B008BBC33 /* TranslationType.swift */,
 				A4F9D00A23F63B5B001D37E4 /* Translation.swift */,
+				71536DA123FC2659004A330C /* HistoryEntity.swift */,
+				71536DA323FC2B2F004A330C /* History.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -376,6 +418,7 @@
 				A4F21F3423FA7B130032A2D0 /* ContainerView.swift */,
 				71536D9623FAC279004A330C /* Button.swift */,
 				71536D9823FAC912004A330C /* TextView.swift */,
+				71CCF3E723FD0A8F00F13DC1 /* BannerContent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F9D00523F63778001D37E4 /* HiraganaTranslationRepository.swift */,
+				71536DA823FC441E004A330C /* DatabaseRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -427,6 +471,8 @@
 			children = (
 				A4F9D00823F63B22001D37E4 /* Translator.swift */,
 				A4F9D00C23F63B93001D37E4 /* TranslationEntityTranslator.swift */,
+				71536DAD23FC4A1C004A330C /* HistoryEntityTranslator.swift */,
+				71CCF3D923FCEAA900F13DC1 /* HistoryTranslator.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -453,19 +499,9 @@
 				A4F21F3F23FA7DE90032A2D0 /* Storyboard.swift */,
 				A4F21F3623FA7C6C0032A2D0 /* InputSentence */,
 				A44383FE23FB6B4C00F1E1ED /* Result */,
-				A4F9D02623F65221001D37E4 /* Prototype */,
 				A4F21F3223FA7AF50032A2D0 /* Common */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A4F9D02623F65221001D37E4 /* Prototype */ = {
-			isa = PBXGroup;
-			children = (
-				A4F9D02723F65232001D37E4 /* PrototypeViewController.swift */,
-				A4F9D02923F65255001D37E4 /* PrototypeViewController.storyboard */,
-			);
-			path = Prototype;
 			sourceTree = "<group>";
 		};
 		A4F9D02B23F65465001D37E4 /* ViewModel */ = {
@@ -474,17 +510,8 @@
 				71536D9C23FAEBAB004A330C /* ViewModelType.swift */,
 				71536D9E23FAEBF6004A330C /* InputSentence */,
 				A443841623FBA33A00F1E1ED /* Result */,
-				A4F9D02C23F6547F001D37E4 /* Prototype */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A4F9D02C23F6547F001D37E4 /* Prototype */ = {
-			isa = PBXGroup;
-			children = (
-				A4F9D02D23F6548F001D37E4 /* PrototypeViewModel.swift */,
-			);
-			path = Prototype;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,7 +603,6 @@
 				A4F0972A23F50487008BBC33 /* Assets.xcassets in Resources */,
 				A443840223FB6B7B00F1E1ED /* ResultViewController.storyboard in Resources */,
 				A443840923FB6E1900F1E1ED /* ResultCell.xib in Resources */,
-				A4F9D02A23F65255001D37E4 /* PrototypeViewController.storyboard in Resources */,
 				A443840D23FB70E000F1E1ED /* ResultTitleCell.xib in Resources */,
 				A443841123FB71A900F1E1ED /* ResultHistoryCell.xib in Resources */,
 			);
@@ -610,6 +636,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MarqueeLabel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NotificationBanner.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -647,11 +678,13 @@
 			files = (
 				A443840C23FB70E000F1E1ED /* ResultTitleCell.swift in Sources */,
 				71536DA023FAEC1F004A330C /* InputSentenceViewModel.swift in Sources */,
+				71CCF3E823FD0A8F00F13DC1 /* BannerContent.swift in Sources */,
 				A4F21F3823FA7CEF0032A2D0 /* InputSentenceViewController.swift in Sources */,
+				71536DA423FC2B2F004A330C /* History.swift in Sources */,
 				71536D9923FAC912004A330C /* TextView.swift in Sources */,
 				A4F0976423F53A05008BBC33 /* TranslationEntity.swift in Sources */,
 				A4F0976623F53B3B008BBC33 /* TranslationType.swift in Sources */,
-				A4F9D02E23F6548F001D37E4 /* PrototypeViewModel.swift in Sources */,
+				71536DA923FC441E004A330C /* DatabaseRepository.swift in Sources */,
 				A4F21F3C23FA7D300032A2D0 /* DisposableViewController.swift in Sources */,
 				A443841323FB7ACB00F1E1ED /* ResultCellType.swift in Sources */,
 				71536D9523F5AA65004A330C /* PostSentenceRequest.swift in Sources */,
@@ -663,17 +696,21 @@
 				71536D8C23F596C8004A330C /* Secrets.swift in Sources */,
 				71536D9D23FAEBAB004A330C /* ViewModelType.swift in Sources */,
 				A4F9D00D23F63B93001D37E4 /* TranslationEntityTranslator.swift in Sources */,
+				71536DAC23FC48CB004A330C /* ResultModel.swift in Sources */,
 				71536D9223F5A940004A330C /* HiraganaTranslationAPIService.swift in Sources */,
 				A443841823FBA34A00F1E1ED /* ResultViewModel.swift in Sources */,
 				A4F9D03223F656FF001D37E4 /* PrototypeModel.swift in Sources */,
+				71CCF3DA23FCEAA900F13DC1 /* HistoryTranslator.swift in Sources */,
 				A443841023FB71A900F1E1ED /* ResultHistoryCell.swift in Sources */,
+				71536DA723FC3DED004A330C /* RealmManager.swift in Sources */,
 				A4F21F4223FA7F7B0032A2D0 /* NavigationController.swift in Sources */,
 				A4F0972123F50483008BBC33 /* AppDelegate.swift in Sources */,
 				A4F9D00923F63B22001D37E4 /* Translator.swift in Sources */,
-				A4F9D02823F65232001D37E4 /* PrototypeViewController.swift in Sources */,
+				71536DAE23FC4A1C004A330C /* HistoryEntityTranslator.swift in Sources */,
 				A443841523FB847100F1E1ED /* InputSentenceModel.swift in Sources */,
 				71536D9023F5A823004A330C /* HiraganaTranslationAPITargetType.swift in Sources */,
 				A4F21F4023FA7DE90032A2D0 /* Storyboard.swift in Sources */,
+				71536DA223FC2659004A330C /* HistoryEntity.swift in Sources */,
 				A4F9D00623F63778001D37E4 /* HiraganaTranslationRepository.swift in Sources */,
 				A4F21F4623FA88810032A2D0 /* UIColor+Extension.swift in Sources */,
 			);

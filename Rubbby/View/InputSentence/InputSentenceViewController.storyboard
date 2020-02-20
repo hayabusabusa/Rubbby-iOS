@@ -101,7 +101,7 @@
                                                                     </view>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pt9-vR-f6M" customClass="TextView" customModule="Rubbby" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="73" width="334" height="124"/>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="124" id="rqu-O5-Ac7"/>
                                                                         </constraints>
@@ -136,7 +136,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </button>
                                                                         </subviews>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="bottom" secondItem="qY3-7g-OhP" secondAttribute="bottom" id="YY6-VS-QxF"/>
                                                                             <constraint firstItem="qY3-7g-OhP" firstAttribute="top" secondItem="InF-nN-Vxt" secondAttribute="top" constant="12" id="eO6-Wu-hjP"/>
@@ -146,7 +146,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" name="ContainerBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="7oH-es-ate" secondAttribute="bottom" constant="16" id="NEt-B3-gaV"/>
                                                             <constraint firstAttribute="trailing" secondItem="7oH-es-ate" secondAttribute="trailing" constant="16" id="d22-dA-irz"/>
@@ -289,6 +289,9 @@
     <resources>
         <image name="ic_arrow_right" width="24" height="24"/>
         <image name="ic_close_circle" width="24" height="24"/>
+        <namedColor name="ContainerBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary">
             <color red="0.61599999666213989" green="0.043000001460313797" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

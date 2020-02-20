@@ -8,6 +8,7 @@
 
 import UIKit
 import RxCocoa
+import NotificationBanner
 
 final class InputSentenceViewController: DisposableViewController {
 
@@ -16,7 +17,7 @@ final class InputSentenceViewController: DisposableViewController {
     @IBOutlet private weak var typeSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var outputTypeLabel: UILabel!
     @IBOutlet private weak var clearButton: UIButton!
-    @IBOutlet private weak var inputTextView: UITextView!
+    @IBOutlet private weak var inputTextView: TextView!
     @IBOutlet private weak var translateButton: UIButton!
     @IBOutlet private weak var usageButton: UIButton!
     @IBOutlet private weak var usageTextView: UITextView!
@@ -80,18 +81,37 @@ extension InputSentenceViewController {
         output.isLoading
             .emit(to: rx.isLoading)
             .disposed(by: disposeBag)
+        output.notificationBannerSignal
+            .emit(onNext: { [weak self] content in self?.showBanner(content: content) })
+            .disposed(by: disposeBag)
         output.clearTextSignal
-            .emit(to: inputTextView.rx.text.orEmpty)
+            .emit(onNext: { [weak self] emptyText in
+                self?.inputTextView.text = emptyText
+                self?.inputTextView.setHidePlaceholder(isHidden: false)
+            })
             .disposed(by: disposeBag)
         output.outputTypeDriver
             .drive(outputTypeLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.usageButtonTitleDriver
+            .drive(usageButton.rx.title())
             .disposed(by: disposeBag)
         output.hideUsageTextViewDriver
             .drive(onNext: { [weak self] isHidden in self?.usageTextViewExpandAnimation(isHidden: isHidden) })
             .disposed(by: disposeBag)
         output.presentResult
-            .emit(onNext: { [weak self] translation in self?.presentResult(translation: translation) })
+            .emit(onNext: { [weak self] dependency in self?.presentResult(dependency: dependency) })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Error message
+
+extension InputSentenceViewController {
+
+    private func showBanner(content: BannerContent) {
+        let banner = GrowingNotificationBanner(title: content.title, subtitle: content.message, style: content.style)
+        banner.show()
     }
 }
 
@@ -101,6 +121,7 @@ extension InputSentenceViewController {
 
     private func usageTextViewExpandAnimation(isHidden: Bool) {
         UIView.animate(withDuration: 0.3) {
+            self.usageTextView.alpha = isHidden ? 0 : 1
             self.usageTextView.isHidden = isHidden
         }
     }
@@ -110,8 +131,9 @@ extension InputSentenceViewController {
 
 extension InputSentenceViewController {
 
-    private func presentResult(translation: Translation) {
-        let vc = NavigationController(rootViewController: ResultViewController.configure(with: translation))
+    private func presentResult(dependency: ResultViewModel.Dependency) {
+        let vc = NavigationController(rootViewController: ResultViewController.configure(with: dependency.originalText,
+                                                                                         translation: dependency.translation))
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)

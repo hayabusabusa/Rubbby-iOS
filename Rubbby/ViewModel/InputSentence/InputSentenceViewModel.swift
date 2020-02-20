@@ -41,20 +41,23 @@ extension InputSentenceViewModel: ViewModelType {
 
     struct Output {
         let isLoading: Signal<Bool>
+        let notificationBannerSignal: Signal<BannerContent>
         let clearTextSignal: Signal<String>
         let outputTypeDriver: Driver<String>
+        let usageButtonTitleDriver: Driver<String>
         let hideUsageTextViewDriver: Driver<Bool>
-        let presentResult: Signal<Translation>
+        let presentResult: Signal<ResultViewModel.Dependency>
     }
 
     // MARK: Transform I/O
 
     func transform(input: InputSentenceViewModel.Input) -> InputSentenceViewModel.Output {
         let isLoadingRelay: PublishRelay<Bool> = .init()
+        let notificationBannerRelay: PublishRelay<BannerContent> = .init()
         let inputTextRelay: BehaviorRelay<String> = .init(value: "")
         let outputTypeRelay: BehaviorRelay<String> = .init(value: "ひらがな")
         let hideUsageTextViewRelay: BehaviorRelay<Bool> = .init(value: true)
-        let presentResultRelay: PublishRelay<Translation> = .init()
+        let presentResultRelay: PublishRelay<ResultViewModel.Dependency> = .init()
 
         input.inputTextViewDriver
             .drive(inputTextRelay)
@@ -74,10 +77,13 @@ extension InputSentenceViewModel: ViewModelType {
                 self.model.postSentence(appId: appID, sentence: sentence, outputType: outputType)
                     .subscribe(onSuccess: { translation in
                         isLoadingRelay.accept(false) // Hide indicator
-                        presentResultRelay.accept(translation)
-                    }, onError: { error in
+                        presentResultRelay.accept(ResultViewModel.Dependency(originalText: inputTextRelay.value,
+                                                                             translation: translation))
+                    }, onError: { _ in
                         isLoadingRelay.accept(false) // Hide indicator
-                        print(error)
+                        notificationBannerRelay.accept(BannerContent(title: "エラー",
+                                                                     message: "通信状況や入力したテキストを確認してください。",
+                                                                     style: .danger)) // Show banner with error
                     })
                     .disposed(by: self.disposeBag)
             })
@@ -87,9 +93,14 @@ extension InputSentenceViewModel: ViewModelType {
             .emit(to: hideUsageTextViewRelay)
             .disposed(by: disposeBag)
 
+        let usageButtonTitleDriver = hideUsageTextViewRelay.map { $0 ? "表示する" : "閉じる" }
+            .asDriver(onErrorDriveWith: .empty())
+
         return Output(isLoading: isLoadingRelay.asSignal(),
+                      notificationBannerSignal: notificationBannerRelay.asSignal(),
                       clearTextSignal: input.tapClearButtonSignal.map { "" },
                       outputTypeDriver: outputTypeRelay.asDriver(),
+                      usageButtonTitleDriver: usageButtonTitleDriver,
                       hideUsageTextViewDriver: hideUsageTextViewRelay.asDriver(),
                       presentResult: presentResultRelay.asSignal())
     }
